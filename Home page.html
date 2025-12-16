@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 800ms ease-out both;
+    }
+
+    .animate-fade {
+      animation: fadeIn 800ms ease-out both;
+    }
+
+    .card-hover {
+      transition: transform .35s cubic-bezier(.22, .8, .52, 1), box-shadow .35s, border-color .2s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      border-color: rgba(0, 0, 0, .08);
+    }
+
+    .btn-transition {
+      transition: background-color .2s ease, color .2s ease, transform .15s ease;
+    }
+
+    .btn-transition:focus {
+      outline: 2px solid rgba(34, 197, 94, .25);
+      outline-offset: 2px;
+    }
+
+    .btn-transition:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-link {
+      transition: color .15s ease, transform .15s ease;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased overflow-x-hidden">
+
+<nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20 gap-4">
+
+
+      <div class="flex-shrink-0 md:mr-3">
+        <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+          <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+        </a>
+      </div>
+
+
+      <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+        <div class="relative w-full">
+          <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+            class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+          <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+        </div>
+      </div>
+
+
+      <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+        <a href="gov.html" class="hover:text-black">Government</a>
+        <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+        <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+            aria-haspopup="true" aria-expanded="false">
+            Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+          </button>
+          <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                  group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                  transition-all duration-300 z-10">
+            <a href="business-economy.html"
+              class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+            <a href="Health.html"
+              class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+              Services</a>
+            <a href="Education.html"
+              class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+            <a href="Restaurant.html"
+              class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+            <a href="Market.html"
+              class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+            <a href="tourist.html"
+              class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+          </div>
+        </div>
+        <a href="About page.html" class="hover:text-black">About</a>
+        <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+        <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+          <button onclick="window.location.href='Login.html'"
+            class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+            Sign in
+          </button>
+          <button onclick="window.location.href='Business-sector.html'"
+            class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+            Add
+          </button>
+        </div>
+      </div>
+
+
+      <div class="lg:hidden">
+        <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+      <div class="px-4 py-4 space-y-3">
+        <div class="mb-4 relative">
+          <input id="mobile-search-input" type="search" placeholder="Search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+          <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+        <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+        <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+        <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+        <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+        <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+          <button onclick="window.location.href='Login.html'"
+            class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+            in</button>
+          <button onclick="window.location.href='Business-sector.html'"
+            class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <section class="w-full mt-20 mb-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div style="background-image: url(https://i.pinimg.com/1200x/a3/5d/09/a35d09fc4b05fdbfedcfb96564cf9a12.jpg);"
+        class="w-full bg-cover bg-center bg-no-repeat bg-gray-700 bg-blend-overlay text-white py-20 md:py-40 rounded-sm flex flex-col items-center text-center px-4 animate-fade-up">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight shadow-sm">
+          Find what Abia has to offer
+        </h1>
+        <p class="text-base sm:text-xl max-w-3xl mb-6 sm:mb-8 opacity-95 drop-shadow-md">
+          Search for businesses, services, and government resources across Abia State.
+          Connect with local enterprises and essential contacts in seconds.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+          <button
+            class="bg-white text-gray-900 px-6 py-3 sm:px-5 sm:py-4 hover:bg-black hover:text-white text-base sm:text-lg rounded btn-transition">
+            Search
+          </button>
+          <button
+            class="border border-white text-white hover:bg-black hover:text-white px-6 py-3 sm:px-5 sm:py-4 text-base sm:text-lg rounded btn-transition">
+            Browse
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full mt-40 mb-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 animate-fade-up">
+        <p class="text-lg text-gray-900">Browse</p>
+        <h2 class="text-5xl font-bold mt-3">What you need in Abia</h2>
+        <p class="text-lg text-gray-700 mt-5">
+          Find doctors, schools, markets, food, businesses, and government offices
+        </p>
+      </div>
+
+
+      <div class="flex flex-col lg:flex-row gap-5 mx-auto">
+        <div class="border border-black p-0 flex flex-col card-hover w-full lg:w-1/3 animate-fade-up">
+          <a href="Health.html">
+            <div class="h-64 w-full overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800"
+                alt="Hospitals and clinics" class="h-full w-full object-cover animate-fade">
+            </div>
+            <div class="px-5 pt-5 pb-0">
+              <p class="text-lg font-semibold text-gray-900 mt-5">Health</p>
+              <h3 class="text-2xl font-bold mt-3">Hospitals and clinics</h3>
+              <p class="mt-3 text-xl text-gray-900">Access quality medical care and healthcare services across Abia
+                State. Find hospitals, clinics, and specialists near you.</p>
+              <div class="mt-7 mb-0">
+                <button
+                  class="border border-black px-6 py-4 rounded text-lg hover:bg-black hover:text-white">View</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex flex-col w-full lg:w-2/3 gap-5">
+          <div class="flex flex-col md:flex-row gap-5">
+            <a href="Education.html" class="w-full md:w-1/2">
+              <div class="border border-black p-0 flex flex-col h-full card-hover animate-fade-up">
+                <div class="h-48 w-full overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800" alt="Education"
+                    class="w-full h-full object-cover animate-fade">
+                </div>
+                <div class="p-5 flex-grow">
+                  <h3 class="text-2xl font-bold">Education</h3>
+                  <p class="text-xl text-gray-900 mt-2">Schools and training centers</p>
+                  <button class="mt-4 text-lg text-gray-900 font-medium hover:text-black flex items-center gap-1">
+                    <span>View</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+
+            <a href="Market.html" class="w-full md:w-1/2">
+              <div class="border border-black p-0 flex flex-col h-full card-hover animate-fade-up">
+                <div class="h-48 w-full overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800" alt="Markets"
+                    class="w-full h-full object-cover animate-fade">
+                </div>
+                <div class="p-5 flex-grow">
+                  <h3 class="text-2xl font-bold">Markets</h3>
+                  <p class="text-xl text-gray-900 mt-2">Trading posts and vendors</p>
+                  <button class="mt-4 text-lg text-gray-900 font-medium hover:text-black flex items-center gap-1">
+                    <span>View</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <a href="Restaurant.html">
+            <div class="border border-black p-0 flex flex-col md:flex-row card-hover animate-fade-up">
+              <div class="h-56 md:h-auto w-full md:w-1/2 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800"
+                  alt="Restaurants and food vendors" class="w-full h-full object-cover animate-fade">
+              </div>
+              <div class="p-5 md:w-1/2 flex flex-col justify-center">
+                <p class="text-lg font-semibold text-gray-900">Food</p>
+                <h3 class="text-2xl font-bold mt-1">Restaurants and food vendors</h3>
+                <p class="text-xl text-gray-900 mt-2">Discover local dining and food services</p>
+                <button class="mt-4 text-lg text-gray-900 font-medium hover:text-black flex items-center gap-1">
+                  <span>View</span>
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full py-20 bg-white mt-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-lg font-bold text-gray-900">Updates</p>
+      <h2 class="text-5xl font-bold mt-3">Latest announcements</h2>
+      <p class="text-gray-700 text-lg mt-4">
+        Stay informed on government news and important notices
+      </p>
+      <div class="flex justify-center space-x-4 mt-8">
+        <a href="Government-announcement.html"><button
+            class="border border-black p-5 rounded text-lg font-bold hover:bg-black hover:text-white">View
+            all</button></a>
+        <button class="text-lg font-bold p-5">Government</button>
+        <button class="text-lg font-bold p-5">Education</button>
+        <button class="text-lg font-bold p-5">Health</button>
+        <button class="text-lg font-bold p-5">Commerce</button>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="border border-black overflow-hidden card-hover animate-fade-up">
+        <div class="h-72 bg-gray-200 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800" alt="Government Meeting"
+            class="h-full w-full object-cover">
+        </div>
+        <div class="p-10">
+          <div class="flex items-center space-x-4 text-lg text-gray-900">
+            <span
+              class="font-bold border border-black p-3 hover:bg-black hover:text-white btn-transition">Government</span>
+            <span>2 min read</span>
+          </div>
+          <h3 class="text-2xl font-bold mt-3">
+            New civil service recruitment begins next month
+          </h3>
+          <p class="text-lg text-gray-700 mt-3">
+            Applications are now open for qualified candidates seeking positions
+          </p>
+          <a href="#" class="text-lg font-semibold mt-5 inline-flex items-center btn-transition">
+            Read more
+            <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="border border-black overflow-hidden card-hover animate-fade-up">
+        <div class="h-72 bg-gray-200 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800" alt="Students in Classroom"
+            class="h-full w-full object-cover">
+        </div>
+        <div class="p-10">
+          <div class="flex items-center space-x-4 text-lg text-gray-900">
+            <span
+              class="font-bold border border-black p-3 hover:bg-black hover:text-white btn-transition">Education</span>
+            <span>3 min read</span>
+          </div>
+          <h3 class="text-2xl font-bold mt-3">
+            School resumption date announced for all institutions
+          </h3>
+          <p class="text-lg text-gray-700 mt-3">
+            Parents and students should prepare for the new academic session
+          </p>
+          <a href="#" class="text-lg font-semibold mt-5 inline-flex items-center btn-transition">
+            Read more
+            <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="border border-black overflow-hidden card-hover animate-fade-up">
+        <div class="h-72 bg-gray-200 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800" alt="Health Screening"
+            class="h-full w-full object-cover">
+        </div>
+        <div class="p-10">
+          <div class="flex items-center space-x-4 text-lg text-gray-900">
+            <span class="font-bold border border-black p-3 hover:bg-black hover:text-white btn-transition">Health</span>
+            <span>2 min read</span>
+          </div>
+          <h3 class="text-2xl font-bold mt-3">
+            Free health screening campaign scheduled statewide
+          </h3>
+          <p class="text-lg text-gray-700 mt-3">
+            Community members can access preventive healthcare services
+          </p>
+          <a href="#" class="text-lg font-semibold mt-5 inline-flex items-center btn-transition">
+            Read more
+            <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="border border-black overflow-hidden card-hover animate-fade-up">
+        <div class="h-72 bg-gray-200 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Commerce and Business"
+            class="h-full w-full object-cover">
+        </div>
+        <div class="p-10">
+          <div class="flex items-center space-x-4 text-lg text-gray-900">
+            <span
+              class="font-bold border border-black p-3 hover:bg-black hover:text-white btn-transition">Commerce</span>
+            <span>4 min read</span>
+          </div>
+          <h3 class="text-2xl font-bold mt-3">
+            Business registration fees reduced for SMEs
+          </h3>
+          <p class="text-lg text-gray-700 mt-3">
+            Small enterprises now benefit from improved registration incentives
+          </p>
+          <a href="#" class="text-lg font-semibold mt-5 inline-flex items-center btn-transition">
+            Read more
+            <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full py-20 bg-white mt-20">
+    <div class="max-w-5xl mx-auto text-center px-4 animate-fade-up">
+      <p class="text-lg font-bold text-gray-900">Emergency</p>
+      <h2 class="text-5xl font-bold mt-3">Reach help when it matters</h2>
+      <p class="text-gray-700 mt-3">
+        Quick access to essential emergency services. Call now for immediate assistance.
+      </p>
+      <div class="flex justify-center space-x-3 mt-8">
+        <button
+          class="border-black p-5 border-t border-b px-4 rounded-md text-lg font-bold hover:bg-black hover:text-white btn-transition">
+          Call
+        </button>
+        <button
+          class="inline-flex items-center text-lg font-bold hover:bg-black hover:text-white p-5 rounded-md hover:border border-black btn-transition">
+          Phone
+          <span class="ml-1"><i class="bi bi-arrow-right"></i></span>
+        </button>
+      </div>
+      <div class="flex justify-center space-x-8 mt-10 text-lg font-bold text-gray-700">
+        <button class="hover:border-b-2 hover:border-black pb-1">Police</button>
+        <button class="hover:border-b-2 hover:border-black pb-1">Fire</button>
+        <button class="hover:border-b-2 hover:border-black pb-1">Ambulance</button>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-14 px-4">
+      <div class="border border-black grid grid-cols-1 md:grid-cols-2 animate-fade-up">
+        <div class="w-full flex items-center justify-center h-80 overflow-hidden">
+          <img src="images/Emergency flashing police siren vector illustration By Microvector _ TheHungryJPEG.jpeg"
+            alt="Emergency Police Siren" class="w-full h-full object-cover">
+        </div>
+        <div class="p-10 flex flex-col justify-center">
+          <p class="text-lg text-gray-900 font-medium">Police</p>
+          <h3 class="text-2xl font-semibold mt-2">
+            Report crimes and emergencies
+          </h3>
+          <p class="text-gray-700 text-lg mt-3">
+            Contact the police force for security threats and criminal incidents.
+          </p>
+          <div class="flex space-x-4 mt-6">
+            <button
+              class="border-black p-5 border-t border-b px-4 p-5 rounded-md text-lg font-bold hover:bg-black hover:text-white">
+              Call
+            </button>
+            <button
+              class="inline-flex items-center text-lg font-bold hover:bg-black hover:text-white p-5 rounded-md hover:border border-black">
+              Phone
+              <span class="ml-1"><i class="bi bi-arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8 animate-fade-up">
+        <h3 class="text-2xl font-semibold">Need more help?</h3>
+        <p class="text-gray-700 mt-2">Quick links and services to get assistance fast.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 bg-white border border-black rounded card-hover animate-fade-up">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-green-100 rounded text-green-600"><i class="bi bi-hospital text-2xl"></i></div>
+            <div>
+              <h4 class="font-bold text-lg">Nearby Hospitals</h4>
+              <p class="text-sm text-gray-700 mt-1">Find hospitals and clinics close to you.</p>
+              <button
+                class="mt-4 inline-block text-sm font-semibold btn-transition border border-black px-4 py-2 rounded">Get
+                directions</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 bg-white border border-black rounded card-hover animate-fade-up">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-yellow-100 rounded text-yellow-600"><i class="bi bi-wrench text-2xl"></i></div>
+            <div>
+              <h4 class="font-bold text-lg">Roadside Assistance</h4>
+              <p class="text-sm text-gray-700 mt-1">Help for vehicle breakdowns and accidents.</p>
+              <button
+                class="mt-4 inline-block text-sm font-semibold btn-transition border border-black px-4 py-2 rounded">Request
+                help</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 bg-white border border-black rounded card-hover animate-fade-up">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-pink-100 rounded text-pink-600"><i class="bi bi-heart text-2xl"></i></div>
+            <div>
+              <h4 class="font-bold text-lg">Mental Health Support</h4>
+              <p class="text-sm text-gray-700 mt-1">Confidential counselling and crisis lines.</p>
+              <button
+                class="mt-4 inline-block text-sm font-semibold btn-transition border border-black px-4 py-2 rounded">Get
+                support</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 bg-white border border-black rounded card-hover animate-fade-up">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-blue-100 rounded text-blue-600"><i class="bi bi-people text-2xl"></i></div>
+            <div>
+              <h4 class="font-bold text-lg">Volunteer Services</h4>
+              <p class="text-sm text-gray-700 mt-1">Connect with local volunteers and community groups.</p>
+              <button
+                class="mt-4 inline-block text-sm font-semibold btn-transition border border-black px-4 py-2 rounded">Join
+                now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <img src="images/my-abia-logo-nobg.png" alt="My Abia Logo" class="h-14 w-auto object-contain mr-2"> My Abia
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

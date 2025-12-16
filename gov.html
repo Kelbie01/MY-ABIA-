@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government of Abia State - Structure & Functions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            // Setting "Times New Roman" as the default font family
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom subtle animations and hover helpers */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 600ms ease-out both;
+    }
+
+    .animate-fade {
+      animation: fadeIn 600ms ease-out both;
+    }
+
+    .card-hover {
+      transition: transform .35s cubic-bezier(.22, .8, .52, 1), box-shadow .35s, border-color .2s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      border-color: rgba(0, 0, 0, .08);
+    }
+
+    .btn-transition {
+      transition: background-color .2s ease, color .2s ease, transform .15s ease;
+    }
+
+    .btn-transition:focus {
+      outline: 2px solid rgba(34, 197, 94, .25);
+      outline-offset: 2px;
+    }
+
+    .btn-transition:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-link {
+      transition: color .15s ease, transform .15s ease;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased overflow-x-hidden">
+
+
+
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                  group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                  transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourist.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <section class="w-full mt-10 mb-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div
+        class="w-full bg-gray-800 text-white py-20 md:py-32 rounded-sm flex flex-col items-center text-center px-4 animate-fade-up bg-cover bg-center bg-no-repeat bg-blend-overlay"
+        style="background-image: url('https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=2033&auto=format&fit=crop');">
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-md">
+          Government of Abia State
+        </h1>
+        <p class="text-base sm:text-xl max-w-3xl mb-6 sm:mb-8 opacity-90 drop-shadow-sm">
+          Executive, Legislative, and Judicial Structure serving the people.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+          <button
+            class="bg-white text-gray-900 px-6 py-3 sm:px-5 sm:py-4 hover:bg-gray-200 hover:text-black text-base font-semibold sm:text-lg rounded-md btn-transition shadow-lg">
+            View Official Portal
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="w-full mb-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="flex flex-col gap-12">
+
+
+        <div class="flex flex-col md:flex-row items-center border border-black card-hover animate-fade-up">
+          <div
+            class="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 flex items-center justify-center overflow-hidden relative group">
+
+            <img src="https://cdn.guardian.ng/wp-content/uploads/2021/04/Nigeria-FEC-Meeting-897x598.jpg"
+              alt="Executive Governor Office"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Executive</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Led by the Executive Governor, this arm implements laws and oversees the daily administration of the
+              state. It includes the Deputy Governor, Secretary into State Government, and Commissioners of various
+              Ministries.
+            </p>
+            <button class="border border-black px-6 py-3 rounded-md text-lg hover:bg-black hover:text-white transition">
+              Meet the Cabinet
+            </button>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row-reverse items-center border border-black card-hover animate-fade-up">
+          <div
+            class="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 flex items-center justify-center overflow-hidden relative group">
+
+            <img src="https://nass.gov.ng/themes/newnass/images/content/1528.jpg"
+              alt="Abia State House of Assembly Building"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Legislature</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              The Abia State House of Assembly is the legislative arm responsible for making laws for the peace, order,
+              and good government of the state. It also performs oversight functions.
+            </p>
+            <button class="border border-black px-6 py-3 rounded-md text-lg hover:bg-black hover:text-white transition">
+              House Proceedings
+            </button>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row items-center border border-black card-hover animate-fade-up">
+          <div
+            class="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 flex items-center justify-center overflow-hidden relative group">
+
+            <img src="https://cdn.businessday.ng/2022/08/Judiciary.png" alt="Judiciary and Courts"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Judiciary</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              The independent arm that interprets the laws. The state judiciary comprises the High Court, Customary
+              Court of Appeal, and Magistrates' Courts, ensuring justice and the rule of law.
+            </p>
+            <button class="border border-black px-6 py-3 rounded-md text-lg hover:bg-black hover:text-white transition">
+              Court System
+            </button>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row-reverse items-center border border-black card-hover animate-fade-up">
+          <div
+            class="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 flex items-center justify-center overflow-hidden relative group">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Abia_State_Local_Government_Areas.png/800px-Abia_State_Local_Government_Areas.png"
+              alt="Map of Abia State Local Government Areas"
+              class="w-full h-full object-contain bg-gray-50 p-4 transition-transform duration-500 group-hover:scale-105"
+              onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop'">
+          </div>
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Local Government Areas</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Abia State consists of 17 Local Government Areas (LGAs) that bring government closer to the grassroots.
+              Each LGA is headed by a Chairman and Councilors.
+            </p>
+            <button class="border border-black px-6 py-3 rounded-md text-lg hover:bg-black hover:text-white transition">
+              View all 17 LGAs
+            </button>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row items-center border border-black card-hover animate-fade-up">
+          <div
+            class="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 flex items-center justify-center overflow-hidden relative group">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtzq12T9Iap5UFiTtsJjgUlwZu-sFiaX4NQ&s"
+              alt="Government Policies and Documents"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Policies & Programs</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Discover the strategic pillars of the administration. From agricultural revolutions and infrastructure
+              development to healthcare and educational reforms driving state progress.
+            </p>
+            <button class="border border-black px-6 py-3 rounded-md text-lg hover:bg-black hover:text-white transition">
+              Read Policies
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

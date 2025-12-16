@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abia State Government | Official Announcements</title>
+  <meta name="description" content="Latest achievements and updates from Abia State Government." />
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          },
+          colors: {
+            abia: {
+              gold: '#C5A059',
+              green: '#008751', // Nigerian Green
+              blue: '#1e3a8a',  // Official Blue
+              dark: '#0f172a'
+            }
+          },
+          animation: {
+            "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+          },
+          keyframes: {
+            fadeInUp: {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom Scrollbar Hide */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Card Hover Effects */
+    .news-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased relative flex flex-col min-h-screen overflow-x-hidden">
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                  group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                  transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourist.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <main class="flex-grow pt-12 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+
+
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
+      <div
+        class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-blue-50 text-abia-blue text-lg font-bold mb-6 border border-blue-100 mt-20 mb-5">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        Live Updates from Umuahia
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
+        Building a <span class="text-transparent bg-clip-text bg-gradient-to-r from-abia-green to-teal-500">New
+          Abia</span>
+      </h1>
+      <p class="text-xl text-gray-900 leading-relaxed mb-10">
+        Stay informed with the latest official announcements, infrastructural developments, and policy updates from the
+        administration of Governor Dr. Alex Otti.
+      </p>
+    </div>
+
+
+    <div class="flex flex-wrap justify-center gap-3 animate-fade-in-up" style="animation-delay: 0.2s">
+      <button
+        class="filter-btn active-filter px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300 bg-abia-blue text-white shadow-md border border-transparent"
+        data-category="all">
+        All Updates
+      </button>
+      <button
+        class="filter-btn px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300 bg-white border border-gray-200 text-gray-600 hover:border-abia-blue hover:text-abia-blue"
+        data-category="government">
+        Governance
+      </button>
+      <button
+        class="filter-btn px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300 bg-white border border-gray-200 text-gray-600 hover:border-abia-blue hover:text-abia-blue"
+        data-category="health">
+        Health
+      </button>
+      <button
+        class="filter-btn px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300 bg-white border border-gray-200 text-gray-600 hover:border-abia-blue hover:text-abia-blue"
+        data-category="education">
+        Education
+      </button>
+      <button
+        class="filter-btn px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300 bg-white border border-gray-200 text-gray-600 hover:border-abia-blue hover:text-abia-blue"
+        data-category="infrastructure">
+        Infrastructure
+      </button>
+    </div>
+
+
+    <div class="relative group animate-fade-in-up" style="animation-delay: 0.4s">
+
+      <button id="scrollLeft"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-50 focus:outline-none hidden md:flex">
+        <i class="bi bi-chevron-left text-lg"></i>
+      </button>
+      <button id="scrollRight"
+        class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-50 focus:outline-none hidden md:flex">
+        <i class="bi bi-chevron-right text-lg"></i>
+      </button>
+
+
+      <div id="newsContainer"
+        class="flex gap-6 mt-5 overflow-x-auto pb-12 px-2 snap-x snap-mandatory no-scrollbar scroll-smooth">
+
+      </div>
+
+
+      <div id="emptyState" class="hidden text-center py-12">
+        <i class="bi bi-search text-4xl text-gray-300 mb-3 block"></i>
+        <p class="text-gray-500">No updates found for this category.</p>
+      </div>
+    </div>
+
+
+    <div
+      class="mt-5 rounded-3xl bg-gradient-to-br from-abia-blue to-blue-900 p-5 md:p-12 text-white shadow-2xl relative overflow-hidden animate-fade-in-up"
+      style="animation-delay: 0.6s">
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-bold mb-2">Get Updates Directly</h3>
+          <p class="text-blue-100 text-lg">Subscribe to the official Abia State weekly digest. No spam, just progress
+            reports.
+          </p>
+        </div>
+        <div class="md:w-1/2 w-full">
+          <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3">
+            <input type="email" required placeholder="Enter your email address"
+              class="w-full px-5 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-abia-gold">
+            <button type="submit"
+              class="bg-abia-green hover:bg-green-600 text-white text-lg font-bold px-8 py-3 rounded-lg transition shadow-lg whitespace-nowrap">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- DATA SOURCE ---
+      const newsData = [
+        {
+          id: 1,
+          category: 'health',
+          title: 'New Specialist Hospital Wing Commissioned',
+          desc: 'The state government has completed the ultra-modern diagnostic center equipped with MRI and CT scan facilities.',
+          date: 'Dec 08, 2025',
+          image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600',
+          source: 'Ministry of Health'
+        },
+        {
+          id: 2,
+          category: 'government',
+          title: '2026 Budget Presentation: "Budget of New Beginnings"',
+          desc: 'Governor Otti presents N567bn budget focused on massive infrastructural renewal and human capital development.',
+          date: 'Dec 05, 2025',
+          image: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&q=80&w=600',
+          source: 'Press Secretary'
+        },
+        {
+          id: 3,
+          category: 'infrastructure',
+          title: 'Port Harcourt - Aba Road Rehabilitation Updates',
+          desc: 'Contractors have been mobilized to site to ensure completion of the dual carriage way before the rainy season.',
+          date: 'Dec 02, 2025',
+          image: 'https://images.unsplash.com/photo-1590486819733-f26388439df4?auto=format&fit=crop&q=80&w=600',
+          source: 'Min of Works'
+        },
+        {
+          id: 4,
+          category: 'education',
+          title: 'Digital Literacy Program for Teachers Launches',
+          desc: 'Over 2,000 public school teachers begin training on modern digital teaching aids and smart classroom management.',
+          date: 'Nov 28, 2025',
+          image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600',
+          source: 'SUBEB'
+        },
+        {
+          id: 5,
+          category: 'government',
+          title: 'Aba Shoe Makers Export First Batch to Europe',
+          desc: 'Following the quality standardization initiative, Made-in-Aba shoes have officially hit international shelves.',
+          date: 'Nov 20, 2025',
+          image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=600',
+          source: 'Commerce'
+        },
+        {
+          id: 6,
+          category: 'health',
+          title: 'Free Medical Outreach Reaches Rural Umuahia',
+          desc: 'Over 5,000 residents benefited from free eye checks, surgeries, and general check-ups this weekend.',
+          date: 'Nov 15, 2025',
+          image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600',
+          source: 'Health'
+        }
+      ];
+
+      // --- DOM ELEMENTS ---
+      const container = document.getElementById('newsContainer');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const scrollLeftBtn = document.getElementById('scrollLeft');
+      const scrollRightBtn = document.getElementById('scrollRight');
+      const emptyState = document.getElementById('emptyState');
+      const searchInput = document.getElementById('desktop-search-input');
+
+      // Mobile Menu Elements
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileSidebar = document.getElementById('mobileSidebar');
+      const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+      const sidebarContent = document.getElementById('sidebarContent');
+      const closeSidebarBtn = document.getElementById('closeSidebar');
+
+      // --- FUNCTIONS ---
+
+      // 1. Render Cards
+      function renderCards(data) {
+        container.innerHTML = '';
+        if (data.length === 0) {
+          emptyState.classList.remove('hidden');
+          return;
+        } else {
+          emptyState.classList.add('hidden');
+        }
+
+        data.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'snap-center min-w-[300px] w-[300px] md:min-w-[340px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 news-card flex flex-col h-full';
+
+          // Colors based on category
+          let badgeColor = 'bg-gray-100 text-gray-800';
+          if (item.category === 'health') badgeColor = 'bg-red-50 text-red-600';
+          if (item.category === 'government') badgeColor = 'bg-blue-50 text-blue-600';
+          if (item.category === 'education') badgeColor = 'bg-yellow-50 text-yellow-700';
+          if (item.category === 'infrastructure') badgeColor = 'bg-green-50 text-green-600';
+
+          card.innerHTML = `
+            <div class="h-48 overflow-hidden relative">
+              <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" loading="lazy">
+              <div class="absolute top-4 left-4 ${badgeColor} text-lg font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                ${item.category}
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center text-lg text-gray-700 mb-4 space-x-2">
+                <span><i class="bi bi-calendar3"></i> ${item.date}</span>
+                <span>&bull;</span>
+                <span class="text-abia-blue font-serif text-lg font-bold">${item.source}</span>
+              </div>
+              <h3 class="text-xl font-bold font-serif text-black mb-5c:\Users\LENOVO\Downloads\ABia logo.jpgc:\Users\LENOVO\Downloads\ABia logo.jpg">
+                <a href="#" class="hover:text-abia-green transition">${item.title}</a>
+              </h3>
+              <p class="text-lg font-bold font-serif text-gray-600 mb-5 line-clamp-3 flex-1">
+                ${item.desc}
+              </p>
+              <a href="#" class="inline-flex items-center text-lg font-bold text-abia-blue hover:text-abia-green font-serif transition mt-auto group">
+                Read Full Story <i class="bi bi-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
+              </a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // 2. Filtering Logic
+      function handleFilter(e) {
+        const selectedCategory = e.target.getAttribute('data-category');
+
+        // Update UI buttons
+        filterBtns.forEach(btn => {
+          btn.classList.remove('bg-abia-blue', 'text-white', 'shadow-md', 'active-filter');
+          btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+        });
+
+        e.target.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+        e.target.classList.add('bg-abia-blue', 'text-white', 'shadow-md', 'active-filter');
+
+        // Filter Data
+        if (selectedCategory === 'all') {
+          renderCards(newsData);
+        } else {
+          const filtered = newsData.filter(item => item.category === selectedCategory);
+          renderCards(filtered);
+        }
+      }
+
+      // 3. Search Logic
+      function handleSearch(e) {
+        const query = e.target.value.toLowerCase();
+        const filtered = newsData.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.desc.toLowerCase().includes(query)
+        );
+        renderCards(filtered);
+      }
+
+      // 4. Scroll Carousel Logic
+      function scrollCarousel(direction) {
+        const scrollAmount = 360; // Card width + gap
+        if (direction === 'left') {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+
+      // 5. Mobile Menu Logic
+      function toggleMobileMenu(show) {
+        if (show) {
+          mobileSidebar.classList.remove('pointer-events-none');
+          sidebarBackdrop.classList.remove('opacity-0');
+          sidebarContent.classList.remove('translate-x-full');
+          document.body.style.overflow = 'hidden';
+        } else {
+          sidebarBackdrop.classList.add('opacity-0');
+          sidebarContent.classList.add('translate-x-full');
+          setTimeout(() => {
+            mobileSidebar.classList.add('pointer-events-none');
+            document.body.style.overflow = '';
+          }, 300);
+        }
+      }
+
+      // --- EVENT LISTENERS ---
+
+      // Filter Buttons
+      filterBtns.forEach(btn => btn.addEventListener('click', handleFilter));
+
+      // Scroll Buttons
+      scrollLeftBtn.addEventListener('click', () => scrollCarousel('left'));
+      scrollRightBtn.addEventListener('click', () => scrollCarousel('right'));
+
+      // Search Input
+      if (searchInput) {
+        searchInput.addEventListener('input', handleSearch);
+      }
+
+
+
+      // Newsletter Form
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = e.target.querySelector('button');
+          const originalText = btn.innerText;
+          btn.innerText = 'Subscribed!';
+          btn.classList.add('bg-gray-800');
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.classList.remove('bg-gray-800');
+            e.target.reset();
+          }, 2000);
+        });
+      }
+
+      // --- INITIALIZATION ---
+      renderCards(newsData);
+    });
+  </script>
+
+  <script src="js/animations.js"></script>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

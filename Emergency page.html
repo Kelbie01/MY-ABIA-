@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Abia - Emergency</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Setting "Times New Roman" as the default font family
+                        sans: ['"Times New Roman"', 'Times', 'serif'],
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased overflow-x-hidden">
+
+
+
+
+    <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+
+
+                <div class="flex-shrink-0 md:mr-3">
+                    <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+                        <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+                    </a>
+                </div>
+
+
+                <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+                    <div class="relative w-full">
+                        <input id="desktop-search-input" type="search"
+                            placeholder="Search attractions, history, or location..."
+                            class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        <i
+                            class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+                    </div>
+                </div>
+
+
+                <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+                    <a href="gov.html" class="hover:text-black">Government</a>
+                    <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+                    <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+                            aria-haspopup="true" aria-expanded="false">
+                            Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                transition-all duration-300 z-10">
+                            <a href="business-economy.html"
+                                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+                            <a href="Health.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                                Services</a>
+                            <a href="Education.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+                            <a href="Restaurant.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+                            <a href="Market.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+                            <a href="tourism.html"
+                                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+                        </div>
+                    </div>
+                    <a href="About page.html" class="hover:text-black">About</a>
+                    <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+                    <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+                        <button onclick="window.location.href='Login.html'"
+                            class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+                            Sign in
+                        </button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="bi bi-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+                <div class="px-4 py-4 space-y-3">
+                    <div class="mb-4 relative">
+                        <input id="mobile-search-input" type="search" placeholder="Search..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+                        <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+                    <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+                    <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+                    <a href="Government-announcement.html"
+                        class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+                    <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                        <button onclick="window.location.href='Login.html'"
+                            class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+                            in</button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="w-full overflow-x-hidden">
+
+
+        <section
+            style="background-image: url('https://i.pinimg.com/736x/75/72/b0/7572b0d0c4ac9b66f884b6b9cf024a32.jpg');"
+            class="px-4 py-32 md:py-40 w-full bg-cover bg-center bg-no-repeat bg-gray-800 bg-blend-overlay">
+            <div class="max-w-5xl mx-auto text-center">
+                <h1 class="text-4xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-5 text-white mt-10 drop-shadow-lg">
+                    Emergency Contacts Matter
+                </h1>
+                <p class="text-base sm:text-2xl text-gray-200 drop-shadow-md">
+                    Keep these numbers close when seconds count and help is needed now.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="px-4 py-20 mt-16 w-full bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+
+
+                    <div
+                        class="shadow-lg overflow-hidden bg-white border border-gray-300 hover:border-black hover:shadow-2xl transition duration-300 rounded-lg flex flex-col">
+                        <div class="border-t-4 border-blue-600"></div>
+
+                        <img src="https://i.pinimg.com/736x/8e/77/5b/8e775b3fc8ff6aeb7d86bb0ec5158281.jpg" alt="Police"
+                            class="w-full h-48 object-cover">
+                        <div class="p-8 flex-grow">
+                            <div class="mb-4">
+                                <i class="bi bi-shield-check text-4xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Police</h3>
+                            <p class="text-gray-700 mb-8 text-lg">Reach the police when danger calls. Day or night, they
+                                answer. Have the number ready before trouble finds you.</p>
+                            <div class="flex flex-col gap-4 mt-auto">
+                                <button
+                                    class="bg-blue-600 text-white text-lg font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-300 w-full flex items-center justify-center gap-2">
+                                    <i class="bi bi-telephone-fill"></i> Call Now
+                                </button>
+                                <a href="#"
+                                    class="text-blue-600 text-lg hover:text-blue-800 transition flex items-center justify-center gap-2 font-bold">
+                                    Learn More <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="shadow-lg overflow-hidden bg-white border border-gray-300 hover:border-black hover:shadow-2xl transition duration-300 rounded-lg flex flex-col">
+                        <div class="border-t-4 border-orange-600"></div>
+
+                        <img src="https://i.pinimg.com/736x/b8/41/1d/b8411dd45d693d1ab3969396791b61ec.jpg"
+                            alt="Fire Service" class="w-full h-48 object-cover">
+                        <div class="p-8 flex-grow">
+                            <div class="mb-4">
+                                <i class="bi bi-fire text-4xl text-orange-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Fire Service</h3>
+                            <p class="text-gray-700 mb-8 text-lg">Fire service stands ready around the clock. When
+                                flames rise and time runs short, one call brings them fast.</p>
+                            <div class="flex flex-col gap-4 mt-auto">
+                                <button
+                                    class="bg-orange-600 text-lg text-white font-semibold py-3 px-4 rounded-lg hover:bg-orange-700 transition duration-300 w-full flex items-center justify-center gap-2">
+                                    <i class="bi bi-telephone-fill"></i> Call Now
+                                </button>
+                                <a href="#"
+                                    class="text-orange-600 text-lg hover:text-orange-800 transition flex items-center justify-center gap-2 font-bold">
+                                    Learn More <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="shadow-lg overflow-hidden bg-white border border-gray-300 hover:border-black hover:shadow-2xl transition duration-300 rounded-lg flex flex-col">
+                        <div class="border-t-4 border-red-600"></div>
+
+                        <img src="https://i.pinimg.com/1200x/48/fd/dd/48fddddccfdec3faae8c4269f78ea149.jpg"
+                            alt="Ambulance" class="w-full h-48 object-cover">
+                        <div class="p-8 flex-grow">
+                            <div class="mb-4">
+                                <i class="bi bi-heart-pulse text-4xl text-red-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Ambulance</h3>
+                            <p class="text-gray-700 mb-8 text-lg">Medical help arrives when you call. They come fast
+                                when someone needs saving. Have the number ready.</p>
+                            <div class="flex flex-col gap-4 mt-auto">
+                                <button
+                                    class="bg-red-600 text-lg text-white font-semibold py-3 px-4 rounded-lg hover:bg-red-700 transition duration-300 w-full flex items-center justify-center gap-2">
+                                    <i class="bi bi-telephone-fill"></i> Call Now
+                                </button>
+                                <a href="#"
+                                    class="text-red-600 text-lg hover:text-red-800 transition flex items-center justify-center gap-2 font-bold">
+                                    Learn More <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="px-4 py-16 w-full bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <p class="text-green-600 font-bold mb-2 text-lg uppercase tracking-wide">More Services</p>
+                    <h2 class="text-3xl sm:text-3xl md:text-4xl font-bold mb-5 mt-3">Other numbers you need</h2>
+                    <p class="text-gray-600 text-xl">Keep these close for when trouble finds you.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-6">
+
+                    <div
+                        class="rounded-lg shadow-md p-8 bg-white hover:shadow-xl transition duration-300 h-full border border-gray-100">
+                        <div class="mb-4">
+                            <i class="bi bi-shield-check text-3xl text-blue-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Road Safety</h3>
+                        <p class="text-lg text-gray-700 mb-5">Assistance for accidents and vehicle emergencies on the
+                            road.</p>
+                        <a href="#"
+                            class="text-blue-600 text-lg hover:text-blue-800 transition flex items-center gap-2 font-bold">
+                            Learn More <i class="bi bi-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+
+
+                    <div
+                        class="rounded-lg shadow-md p-8 bg-white hover:shadow-xl transition duration-300 h-full border border-gray-100">
+                        <div class="mb-4">
+                            <i class="bi bi-heart-fill text-3xl text-pink-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Women's Support</h3>
+                        <p class="text-lg text-gray-700 mb-5">Confidential support and assistance available 24/7 for
+                            women.</p>
+                        <a href="#"
+                            class="text-pink-600 text-lg hover:text-pink-800 transition flex items-center gap-2 font-bold">
+                            Learn More <i class="bi bi-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+
+
+                    <div
+                        class="rounded-lg shadow-md p-8 bg-white hover:shadow-xl transition duration-300 h-full border border-gray-100">
+                        <div class="mb-4">
+                            <i class="bi bi-exclamation-triangle text-3xl text-orange-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Disaster Response</h3>
+                        <p class="text-lg text-gray-700 mb-5">Emergency coordination during floods and natural
+                            disasters.</p>
+                        <a href="#"
+                            class="text-orange-600 text-lg hover:text-orange-800 transition flex items-center gap-2 font-bold">
+                            Learn More <i class="bi bi-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+
+
+                    <div
+                        class="rounded-lg shadow-md p-8 bg-white hover:shadow-xl transition duration-300 h-full border border-gray-100">
+                        <div class="mb-4">
+                            <i class="bi bi-leaf text-3xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Environment</h3>
+                        <p class="text-lg text-gray-700 mb-5">Report sanitation issues and environmental hazards.</p>
+                        <a href="#"
+                            class="text-green-600 text-lg hover:text-green-800 transition flex items-center gap-2 font-bold">
+                            Learn More <i class="bi bi-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="px-4 py-20 md:py-24 w-full bg-gradient-to-r from-green-700 to-green-900">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">Help us keep this current
+                </h2>
+                <p class="text-base sm:text-xl text-green-50 mb-8 md:mb-12 leading-relaxed max-w-2xl mx-auto">Found an
+                    outdated number or
+                    a contact missing? Let us know and we will update it immediately to help the community.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <button
+                        class="bg-white text-green-800 font-bold py-3 px-8 rounded-lg hover:bg-green-50 transition duration-300 flex items-center justify-center gap-2 shadow-lg">
+                        <i class="bi bi-check-circle-fill"></i> Submit Update
+                    </button>
+                    <button
+                        class="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-green-800 transition duration-300 flex items-center justify-center gap-2">
+                        <i class="bi bi-info-circle"></i> Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                                class="bi bi-leaf-fill"></i></span> My Abia</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+                    <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+                </div>
+                <div class="flex gap-4 text-gray-900 text-xl">
+                    <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="border-gray-200 mb-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+                <p>© 2025 My Abia. All rights reserved.</p>
+                <div class="flex gap-6 underline decoration-1 underline-offset-4">
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/global-search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,990 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markets & Trade Centers in Abia State | My Abia</title>
+  <meta name="description"
+    content="Explore the commercial hubs of Abia. From Ariaria International to local food markets.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#059669', // Emerald 600 (Brand Color)
+            secondary: '#262626', // Neutral 800
+            accent: '#ea580c', // Orange 600 (Market Accent)
+          },
+          fontFamily: {
+            // Enforcing Times New Roman as requested
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth rendering animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Modal Animation */
+    @keyframes modalPop {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-animate {
+      animation: modalPop 0.3s ease-out forwards;
+    }
+
+    /* Custom scrollbar */
+    select::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    select::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    select::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+
+
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                  group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                  transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourist.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Emergency page.html" class="block text-lg text-gray-700 hover:text-black">Emergency</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <header
+    style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000&auto=format&fit=crop');"
+    class="relative bg-gray-900 border-b border-gray-200 pt-32 pb-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+
+
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-5 text-white tracking-tight drop-shadow-md">
+        Markets & Trade Centers in Abia
+      </h1>
+      <p class="text-xl text-white max-w-2xl mx-auto font-serif mb-8 drop-shadow-md opacity-90">
+        Discover the commercial heartbeat of the state. From the bustling Ariaria International to local foodstuff
+        markets and timber sheds.
+      </p>
+    </div>
+  </header>
+
+
+  <section class="bg-white sticky top-20 p-3 z-40 border-b border-gray-200 shadow-sm" aria-label="Search and Filters">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4">
+
+
+        <div class="relative flex-grow group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-search text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <input type="text" id="searchInput" placeholder="Search for textiles, electronics, timber, or market name..."
+            class="block w-full pl-10 pr-3 py-3 border border-black rounded-md leading-5 bg-gray-50 placeholder-gray-600 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif transition-all shadow-sm"
+            aria-label="Search markets">
+        </div>
+
+
+        <div class="relative md:w-1/3 group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-geo-alt text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <select id="lgaFilter"
+            class="block w-full pl-10 pr-10 py-3 border border-black rounded-md leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif appearance-none cursor-pointer transition-all shadow-sm"
+            aria-label="Filter by Local Government Area">
+            <option value="">All Locations</option>
+
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            <i class="bi bi-chevron-down text-gray-500"></i>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="mt-3 flex justify-between items-center">
+        <p class="text-lg text-gray-900 font-serif" id="resultCount">Showing all markets</p>
+        <button onclick="resetFilters()"
+          class="text-sm text-accent hover:text-orange-700 hover:underline font-serif hidden" id="resetBtn">Reset
+          Filters</button>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="flex-grow w-full py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+      <div id="marketGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+
+      </div>
+
+
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
+          <i class="bi bi-shop-window text-2xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900">No markets found</h3>
+        <p class="text-gray-700 mt-2 font-serif">Try searching for "Timber", "Stockfish", or "Aba".</p>
+        <button onclick="resetFilters()"
+          class="mt-4 px-4 py-2 bg-secondary text-white rounded-lg hover:bg-black transition font-sans text-sm">Clear
+          Search</button>
+      </div>
+
+    </div>
+  </main>
+
+
+
+
+  <div id="modal-overlay"
+    class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex justify-center items-center p-4 backdrop-blur-sm"
+    onclick="closeModal(event)">
+    <div id="modal-content"
+      class="bg-white w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden relative modal-animate font-serif"
+      onclick="event.stopPropagation()">
+
+
+      <button onclick="closeModal()"
+        class="absolute top-4 right-4 bg-white/90 rounded-full p-2 shadow hover:bg-red-50 text-red-600 z-10 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+
+      <div class="h-64 overflow-hidden relative group">
+        <img id="m-image" src="" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <span id="m-category"
+          class="absolute bottom-4 left-4 bg-primary text-white text-xs px-3 py-1.5 rounded uppercase tracking-wider font-bold shadow-sm"></span>
+      </div>
+
+
+      <div class="p-6 md:p-8">
+        <h2 id="m-title" class="text-3xl font-bold text-gray-900 mb-2 leading-tight"></h2>
+        <p id="m-desc" class="text-gray-700 italic mb-6 border-l-4 border-accent pl-4 text-lg"></p>
+
+
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 shadow-inner">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-5 border-b border-gray-200 pb-2">
+            Market Intelligence</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8 text-lg">
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-geo-alt-fill mr-1"></i> Location
+              </p>
+              <p id="m-location" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-tags-fill mr-1"></i> Primary
+                Goods
+              </p>
+              <p id="m-goods" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-clock-fill mr-1"></i> Best
+                Day/Time
+              </p>
+              <p id="m-time" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-bus-front-fill mr-1"></i>
+                Accessibility</p>
+              <p id="m-access" class="font-medium text-gray-900"></p>
+            </div>
+          </div>
+
+
+          <div class="mt-6 bg-orange-50 border border-orange-100 rounded-lg p-4 flex items-start">
+            <span class="text-xl mr-3">ðŸ’¡</span>
+            <div>
+              <p class="text-xs font-bold text-orange-800 uppercase mb-1">PRO TIP:</p>
+              <p id="m-tip" class="text-base text-orange-900 leading-snug"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-end">
+          <button onclick="closeModal()"
+            class="px-6 py-2.5 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition font-bold text-lg">Close
+            Guide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // ================= DOM ELEMENTS =================
+    const gridContainer = document.getElementById('marketGrid'); // Fixed connection to HTML
+    const searchInput = document.getElementById('searchInput');
+    const lgaFilter = document.getElementById('lgaFilter');
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Modal Elements
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalImage = document.getElementById('m-image');
+    const modalCategory = document.getElementById('m-category');
+    const modalTitle = document.getElementById('m-title');
+    const modalDesc = document.getElementById('m-desc');
+    const modalLocation = document.getElementById('m-location');
+    const modalGoods = document.getElementById('m-goods');
+    const modalTime = document.getElementById('m-time');
+    const modalAccess = document.getElementById('m-access');
+    const modalTip = document.getElementById('m-tip');
+
+    // ================= MARKET DATA (Full List + New Additions) =================
+    const marketData = [
+      // --- ABA (The Commercial Hub) ---
+      {
+        id: 1,
+        name: "Ariaria International Market",
+        type: "International Hub",
+        lga: "Aba North",
+        address: "Faulks Road, Aba",
+        goods: "Leather, Shoes, Bags, Textiles",
+        verified: true,
+        category: "international",
+        image: "https://images.unsplash.com/photo-1621939514649-28b12e816a76?q=80&w=800",
+        desc: "Known as the 'China of Africa', Ariaria is one of the largest markets in West Africa, famous for its shoe and leather manufacturing.",
+        bestTime: "Mondays (Wholesale) & Weekdays",
+        access: "Heavy traffic, accessible by tricycle",
+        tip: "Wear comfortable walking shoes; the market is massive. Visit the 'Bakassi' line for custom-made shoes."
+      },
+      {
+        id: 2,
+        name: "Ahia Ohuru (New Market)",
+        type: "General Market",
+        lga: "Aba South",
+        address: "Ngwa Road, Aba",
+        goods: "Foodstuffs, Second-hand Clothing",
+        verified: true,
+        category: "daily",
+        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800",
+        desc: "A sprawling market specializing in second-hand clothing (Okrika) and bulk foodstuffs. It serves as a major distribution point for textiles.",
+        bestTime: "Early Morning (6 AM - 9 AM)",
+        access: "Accessible via Ngwa Road",
+        tip: "Go early on 'Bale Opening' days (usually Wednesdays and Fridays) for the best clothing deals."
+      },
+      {
+        id: 3,
+        name: "Ekeoha Shopping Center",
+        type: "Textile Hub",
+        lga: "Aba South",
+        address: "Aba-Owerri Road",
+        goods: "Fabrics, Electronics, Curtain Materials",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800",
+        desc: "The premier destination for high-quality fabrics, lace, george wrappers, and electronics in Aba.",
+        bestTime: "Weekdays 10 AM - 4 PM",
+        access: "Paved roads, parking available",
+        tip: "This is the best place to source fabrics for weddings and traditional ceremonies."
+      },
+      {
+        id: 4,
+        name: "Cemetery Market",
+        type: "Food Market",
+        lga: "Aba North",
+        address: "Cemetery Road, Aba",
+        goods: "Bulk Foodstuffs, Provisions",
+        verified: true,
+        category: "daily",
+        image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800",
+        desc: "A major hub for bulk provisions, beverages, and household items at wholesale prices.",
+        bestTime: "Weekdays",
+        access: "Busy, accessible by truck",
+        tip: "Ideal for retailers stocking up shops. Prices here are highly competitive."
+      },
+      {
+        id: 5,
+        name: "Alaoji Motor Parts",
+        type: "Spare Parts",
+        lga: "Ugwunagbo",
+        address: "Port Harcourt Expressway",
+        goods: "Heavy Duty Spare Parts, Machinery",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?q=80&w=800",
+        desc: "The go-to location for mechanics and drivers looking for genuine heavy-duty truck parts and power generators.",
+        bestTime: "Business Hours",
+        access: "Located on the Highway",
+        tip: "Go with a mechanic if you are buying technical engine parts to ensure compatibility."
+      },
+      {
+        id: 6,
+        name: "Eziukwu Market (Cemetery)",
+        type: "Stockfish & Food",
+        lga: "Aba North",
+        address: "Eziukwu Road, Aba",
+        goods: "Stockfish, Dried Fish, Crayfish",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1579294200427-4c3822df332b?q=80&w=800",
+        desc: "A specialized section often grouped with Cemetery Market, focusing heavily on stockfish and aquatic produce.",
+        bestTime: "Mornings",
+        access: "Busy roads",
+        tip: "Great for buying soup ingredients in bulk."
+      },
+      {
+        id: 7,
+        name: "Highlife Market",
+        type: "Electronics",
+        lga: "Aba South",
+        address: "St. Michael's Road, Aba",
+        goods: "Electronics, Phones, Accessories",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1592396327329-a3c3933c0919?q=80&w=800",
+        desc: "The electronics heartbeat of Aba. Phones, laptops, musical instruments, and sound systems are sold here.",
+        bestTime: "10 AM - 5 PM",
+        access: "Central city, pedestrian-heavy",
+        tip: "Test electronics thoroughly before leaving the shop."
+      },
+      {
+        id: 22,
+        name: "Samek Market",
+        type: "Manufacturing Hub",
+        lga: "Aba North",
+        address: "Faulks Road, Ariaria",
+        goods: "Shoe Soles, Leather, Adhesives",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1559563458-52c69529322e?q=80&w=800",
+        desc: "The engine room of the Aba shoe industry. This is where shoemakers source raw materials like leather, gum, and soles.",
+        bestTime: "Weekdays 8 AM - 4 PM",
+        access: "Inside Ariaria area",
+        tip: "If you are a shoemaker, this is the cheapest place to buy supplies in bulk."
+      },
+      {
+        id: 23,
+        name: "Powerline Mechanic Village",
+        type: "Auto Services",
+        lga: "Aba North",
+        address: "Powerline, Aba",
+        goods: "Car Repairs, Spare Parts, Scrap Metal",
+        verified: true,
+        category: "specialized",
+        desc: "A vast cluster of mechanics, panel beaters, and spare part dealers catering to all types of vehicles.",
+        bestTime: "Weekdays",
+        access: "Dirty/Oily environment",
+        tip: "Wear clothes you don't mind getting dirty."
+      },
+      {
+        id: 28,
+        name: "Umungasi Market",
+        type: "Evening Market",
+        lga: "Aba North",
+        address: "Aba-Owerri Road",
+        goods: "Fresh Vegetables, Fruits, Quick Meals",
+        verified: false,
+        category: "daily",
+        desc: "A vibrant evening market catering to workers returning home. Known for fresh vegetables and dinner ingredients.",
+        bestTime: "4 PM - 8 PM",
+        access: "Roadside",
+        tip: "Traffic can be heavy here in the evenings."
+      },
+      {
+        id: 31,
+        name: "Opobo Road Market",
+        type: "Construction Materials",
+        lga: "Aba South",
+        address: "Ogbor Hill, Aba",
+        goods: "Sand, Gravel, Cement, Blocks",
+        verified: false,
+        category: "specialized",
+        desc: "The primary location for sourcing heavy construction aggregates in Aba, located near the waterside.",
+        bestTime: "Morning",
+        access: "Accessible by tipper trucks",
+        tip: "Negotiate delivery fees alongside the material cost."
+      },
+      {
+        id: 32,
+        name: "Good Morning Market",
+        type: "Fresh Perishables",
+        lga: "Aba South",
+        address: "Ngwa Road Bridge Area",
+        goods: "Fresh Meat, Vegetables, Poultry",
+        verified: true,
+        category: "daily",
+        image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800",
+        desc: "A famous daily market that starts bustling at dawn. It is the primary spot for butchers and fresh meat in the city center.",
+        bestTime: "Dawn (5 AM - 10 AM)",
+        access: "Congested",
+        tip: "The freshest meat is sold here before 8 AM."
+      },
+
+      // --- UMUAHIA (The Capital) ---
+      {
+        id: 11,
+        name: "Ubani Ibeku Modern Market",
+        type: "Main Market",
+        lga: "Umuahia North",
+        address: "Ubani, Umuahia",
+        goods: "General Goods, Farm Produce",
+        verified: true,
+        category: "daily",
+        image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=800",
+        desc: "The relocated main market of the capital city. Spacious and organized, offering everything from fresh produce to plastics.",
+        bestTime: "Daily 8 AM - 6 PM",
+        access: "Located on city outskirts, shuttles available",
+        tip: "Prices for farm produce are cheapest in the early hours of the morning."
+      },
+      {
+        id: 12,
+        name: "Industrial Market",
+        type: "Building Materials",
+        lga: "Umuahia North",
+        address: "Azikiwe Road",
+        goods: "Tiles, Plumbing, Electricals",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1534794048419-48eeb10fe99c?q=80&w=800",
+        desc: "The central hub for all building and construction materials in Umuahia.",
+        bestTime: "Weekdays",
+        access: "Central city location",
+        tip: "Compare prices across different lines (Electrical vs Plumbing lines) before purchasing."
+      },
+      {
+        id: 15,
+        name: "Timber Market Umuahia",
+        type: "Wood & Construction",
+        lga: "Umuahia North",
+        address: "Ahiaeke",
+        goods: "Planks, Plywood, Furniture Materials",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800",
+        desc: "A vast market dedicated to wood, aluminum, and furniture making materials.",
+        bestTime: "Weekdays",
+        access: "Good road network",
+        tip: "You can find skilled carpenters on-site to machine the wood to your specifications."
+      },
+      {
+        id: 26,
+        name: "Nkwoegwu Market",
+        type: "Farm Produce",
+        lga: "Umuahia North",
+        address: "Nkwoegwu",
+        goods: "Foodstuffs, Wholesale Banana/Plantain",
+        verified: false,
+        category: "local",
+        desc: "A major hub for wholesale plantains and bananas brought in from surrounding villages.",
+        bestTime: "Nkwo Market Days",
+        access: "Rural",
+        tip: "Best place to buy plantains in bunches for resale."
+      },
+      {
+        id: 27,
+        name: "Afo Ibeji",
+        type: "Heritage Market",
+        lga: "Umuahia South",
+        address: "Old Umuahia",
+        goods: "Local Crafts, Food",
+        verified: false,
+        category: "local",
+        desc: "A traditional market known for local crafts and food items native to the Olokoro/Umuahia clans.",
+        bestTime: "Afo Market Days",
+        access: "Local roads",
+        tip: "Look out for native ceramic pots here."
+      },
+      {
+        id: 29,
+        name: "Isi Gate Market",
+        type: "Street Market",
+        lga: "Umuahia North",
+        address: "Umuwaya Road",
+        goods: "Perishables, Quick Buys",
+        verified: false,
+        category: "daily",
+        desc: "Though officially relocated, this area remains a bustling transit market for quick buys and perishables.",
+        bestTime: "Evenings",
+        access: "City Center",
+        tip: "Very crowded; keep an eye on your valuables."
+      },
+      {
+        id: 33,
+        name: "Orie Ugba",
+        type: "Traditional Market",
+        lga: "Umuahia North",
+        address: "Ugba Village",
+        goods: "Local Delicacies, Palm Wine, Fruits",
+        verified: true,
+        category: "local",
+        desc: "A historic market known for traditional Abia delicacies, fresh palm wine, and seasonal fruits.",
+        bestTime: "Orie Market Days",
+        access: "Accessible",
+        tip: "A great place to experience the local culture and cuisine."
+      },
+
+      // --- OTHER REGIONS ---
+      {
+        id: 17,
+        name: "Orie Ngwa Market",
+        type: "Regional Market",
+        lga: "Isiala Ngwa North",
+        address: "Enugu-PH Express",
+        goods: "Garri, Palm Oil, Bulk Farm Produce",
+        verified: true,
+        category: "local",
+        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800",
+        desc: "A famous rural market located along the expressway, renowned for bulk sales of Garri and palm produce.",
+        bestTime: "Orie Market Days (Every 4 days)",
+        access: "Highway side, very busy",
+        tip: "Travelers often stop here to buy fresh fruits and local snacks."
+      },
+      {
+        id: 19,
+        name: "Nkwo Aro",
+        type: "Heritage Market",
+        lga: "Arochukwu",
+        address: "Arochukwu Ancient Kingdom",
+        goods: "Cultural Items, Foodstuffs, Crafts",
+        verified: true,
+        category: "local",
+        image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800",
+        desc: "An ancient market with deep cultural significance to the Aro people. It trades in local crafts and food staples.",
+        bestTime: "Nkwo Market Days",
+        access: "Rural roads",
+        tip: "Look out for traditional woven baskets and local spices unique to the area."
+      },
+      {
+        id: 20,
+        name: "Lokpanta Cattle Market",
+        type: "Livestock Hub",
+        lga: "Umunneochi",
+        address: "Enugu-PH Expressway",
+        goods: "Cattle, Goats, Northern Produce",
+        verified: true,
+        category: "specialized",
+        image: "https://images.unsplash.com/photo-1596733430204-f7a4d66fd232?q=80&w=800",
+        desc: "The largest livestock market in the South-East. It serves as the major distribution point for cattle and goats in the region.",
+        bestTime: "Daily",
+        access: "Highway location",
+        tip: "Best prices for livestock, but be prepared for the smell and rustic environment."
+      },
+      {
+        id: 24,
+        name: "Obehie Market",
+        type: "Regional Market",
+        lga: "Ukwa West",
+        address: "Obehie Junction",
+        goods: "Palm Oil, Garri, Seafood",
+        verified: false,
+        category: "local",
+        desc: "A strategic market serving the oil-producing communities of Ukwa. Famous for high-quality palm oil.",
+        bestTime: "Market Days",
+        access: "Roadside",
+        tip: "Great place to source seafood from the riverine areas."
+      },
+      {
+        id: 25,
+        name: "Orie Ntigha",
+        type: "Farm Produce",
+        lga: "Isiala Ngwa North",
+        address: "Ntigha",
+        goods: "Garlic, Yams, Cassava",
+        verified: false,
+        category: "local",
+        desc: "Famous for the wholesale of garlic and other tubers produced in the fertile Ngwa lands.",
+        bestTime: "Orie Market Days",
+        access: "Rural",
+        tip: "Known specifically for high-quality garlic."
+      },
+      {
+        id: 30,
+        name: "Azumini Market",
+        type: "Riverside Market",
+        lga: "Ukwa East",
+        address: "Azumini",
+        goods: "Fresh Fish, Crayfish, Gin",
+        verified: false,
+        category: "local",
+        desc: "Located near the Blue River, offering fresh aquatic produce and locally distilled gin.",
+        bestTime: "Morning",
+        access: "Rural",
+        tip: "Combine a visit here with a trip to the Azumini Blue River tourist site."
+      },
+      {
+        id: 34,
+        name: "Uzuakoli Main Market",
+        type: "Heritage Hub",
+        lga: "Bende",
+        address: "Uzuakoli",
+        goods: "Textiles, Palm Oil, Cocoa",
+        verified: true,
+        category: "local",
+        desc: "Once one of the largest slave markets in West Africa, now a major hub for agricultural produce and textiles in Bende.",
+        bestTime: "Market Days",
+        access: "Rural Highway",
+        tip: "The market has a rich history; you can find unique heritage items here."
+      },
+      {
+        id: 35,
+        name: "Eke Akpara",
+        type: "Transit Market",
+        lga: "Osisioma",
+        address: "Akpara Road",
+        goods: "General Goods, Industrial Supplies",
+        verified: false,
+        category: "daily",
+        desc: "Situated near the industrial layout, catering to workers and locals with general goods and provisions.",
+        bestTime: "Daily",
+        access: "Busy Junction",
+        tip: "Good for quick supplies if you are around the Osisioma industrial area."
+      },
+      {
+        id: 36,
+        name: "Mbalano Market",
+        type: "Agro Market",
+        lga: "Isuikwuato",
+        address: "Mbalano",
+        goods: "Cashew Nuts, Garri, Fruits",
+        verified: true,
+        category: "local",
+        desc: "The central market for Isuikwuato, famous for the trade of high-quality cashew nuts and processed cassava.",
+        bestTime: "Market Days",
+        access: "Hilly terrain roads",
+        tip: "The best place to buy raw or processed cashew nuts in bulk."
+      }
+    ];
+
+    // ================= POPULATE LGA FILTER =================
+    function populateLgaFilter() {
+      const lgas = [...new Set(marketData.map(item => item.lga))].sort();
+      lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga;
+        option.textContent = lga;
+        lgaFilter.appendChild(option);
+      });
+    }
+
+    // ================= RENDER FUNCTION =================
+    function renderMarkets(data) {
+      gridContainer.innerHTML = '';
+
+      if (data.length === 0) {
+        gridContainer.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        resultCount.textContent = 'No markets found';
+        return;
+      }
+
+      gridContainer.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      resultCount.textContent = `Showing ${data.length} market${data.length === 1 ? '' : 's'}`;
+
+      data.forEach((place, index) => {
+        let badgeColor = 'bg-gray-100 text-gray-800';
+        switch (place.category) {
+          case 'international':
+            badgeColor = 'bg-purple-100 text-purple-800';
+            break;
+          case 'daily':
+            badgeColor = 'bg-blue-100 text-blue-800';
+            break;
+          case 'specialized':
+            badgeColor = 'bg-orange-100 text-orange-800';
+            break;
+          case 'local':
+            badgeColor = 'bg-green-100 text-green-800';
+            break;
+        }
+
+        const card = document.createElement('div');
+        card.className = `bg-white border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300 flex flex-col justify-between card-animate`;
+        card.style.animationDelay = `${(index % 6) * 50}ms`;
+
+        card.innerHTML = `
+        <div>
+          <div class="flex justify-between items-start mb-5">
+            <span class="${badgeColor} text-lg font-bold px-3 py-1 rounded uppercase tracking-wide font-serif">${place.type}</span>
+            ${place.verified ? '<div class="bg-gray-50 p-1.5 rounded-full"><i class="bi bi-patch-check-fill text-accent text-lg" title="Verified Market"></i></div>' : ''}
+          </div>
+
+          <h3 onclick="openModal(${place.id})" class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-accent transition-colors cursor-pointer hover:underline decoration-accent underline-offset-4">
+            ${place.name}
+          </h3>
+
+          <p class="text-lg font-medium text-accent font-serif mb-4 flex items-start gap-2">
+            <i class="bi bi-tags-fill mt-1"></i> <span>${place.goods}</span>
+          </p>
+
+          <div class="space-y-2 text-lg text-gray-700 font-serif mt-4">
+            <p class="flex items-start gap-2">
+              <i class="bi bi-geo-alt mt-0.5 text-gray-500"></i>
+              <span>${place.address}, <strong>${place.lga}</strong></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-7 pt-4 border-t border-gray-200 flex gap-4 font-serif">
+          <button onclick="openModal(${place.id})" class="flex-1 bg-secondary text-white py-2 rounded-md text-lg font-bold hover:bg-black transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-black">
+            Market Guide
+          </button>
+          <button onclick="openModal(${place.id})" class="px-3 py-2 border border-gray-500 rounded-full text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors" title="View Details">
+            <i class="bi bi-info-circle-fill"></i>
+          </button>
+        </div>
+      `;
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // ================= FILTER LOGIC =================
+    function handleFilters() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedLga = lgaFilter.value;
+
+      const filtered = marketData.filter(place => {
+        const matchesSearch =
+          place.name.toLowerCase().includes(searchTerm) ||
+          place.type.toLowerCase().includes(searchTerm) ||
+          place.goods.toLowerCase().includes(searchTerm) ||
+          place.address.toLowerCase().includes(searchTerm);
+
+        const matchesLga = selectedLga === "" || place.lga === selectedLga;
+
+        return matchesSearch && matchesLga;
+      });
+
+      renderMarkets(filtered);
+
+      if (searchTerm || selectedLga) {
+        resetBtn.classList.remove('hidden');
+      } else {
+        resetBtn.classList.add('hidden');
+      }
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      lgaFilter.value = '';
+      handleFilters();
+    }
+
+    // ================= MODAL LOGIC =================
+    function openModal(id) {
+      const market = marketData.find(m => m.id === id);
+      if (!market) return;
+
+      // Fill data
+      modalImage.src = market.image || 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800';
+      modalCategory.textContent = market.type;
+      modalTitle.textContent = market.name;
+      modalDesc.textContent = market.desc || "Description unavailable.";
+      modalLocation.textContent = `${market.address}, ${market.lga}`;
+      modalGoods.textContent = market.goods;
+      modalTime.textContent = market.bestTime || "Daily";
+      modalAccess.textContent = market.access || "Standard Access";
+      modalTip.textContent = market.tip || "Visit early to avoid traffic.";
+
+      // Show modal
+      modalOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal(event) {
+      if (event && event.target.id === 'modal-content') return;
+      modalOverlay.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // ================= INITIALIZATION =================
+    searchInput.addEventListener('input', handleFilters);
+    lgaFilter.addEventListener('change', handleFilters);
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      populateLgaFilter(); // Populate dropdown
+      renderMarkets(marketData); // Render Grid
+    });
+  </script>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

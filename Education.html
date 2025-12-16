@@ -1,0 +1,713 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education & Schools in Abia State | My Abia</title>
+  <meta name="description"
+    content="Find the best schools in Abia. Universities, Polytechnics, Secondary Schools, and Libraries.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#059669', // Emerald 600 (Brand Color)
+            secondary: '#262626', // Neutral 800
+            accent: '#1d4ed8', // Blue 700 (Education Accent)
+          },
+          fontFamily: {
+            // Enforcing Times New Roman as requested
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth rendering animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Custom scrollbar */
+    select::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    select::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    select::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                    group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                    transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourist.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="relative bg-gray-900 border-b border-gray-200 pt-32 pb-24 overflow-hidden">
+
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2000&auto=format&fit=crop"
+        alt="Education in Abia" class="w-full h-full object-cover opacity-50">
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-5 text-white tracking-tight drop-shadow-md">
+        Education & Schools in Abia
+      </h1>
+      <p class="text-xl text-white max-w-2xl mx-auto font-serif mb-8 drop-shadow-md opacity-90">
+        Empowering the future. Explore top-tier universities, historic secondary schools, and learning centers across
+        the state.
+      </p>
+    </div>
+  </header>
+
+
+  <section class="bg-white sticky top-20 p-3 z-40 border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="relative flex-grow group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-search text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <input type="text" id="searchInput" placeholder="Search by school name, level, or location..."
+            class="block w-full pl-10 pr-3 py-3 border border-black rounded-md leading-5 bg-gray-50 placeholder-gray-600 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif transition-all shadow-sm">
+        </div>
+
+        <div class="relative md:w-1/3 group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-geo-alt text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <select id="lgaFilter"
+            class="block w-full pl-10 pr-10 py-3 border border-black rounded-md leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif appearance-none cursor-pointer transition-all shadow-sm">
+            <option value="">All Locations</option>
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            <i class="bi bi-chevron-down text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 flex justify-between items-center">
+        <p class="text-lg text-gray-900 font-serif" id="resultCount">Showing all institutions</p>
+        <button onclick="resetFilters()"
+          class="text-sm text-accent hover:text-blue-800 hover:underline font-serif hidden" id="resetBtn">Reset
+          Filters</button>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="flex-grow w-full py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="educationGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+
+      </div>
+
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
+          <i class="bi bi-mortarboard text-2xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900">No schools found</h3>
+        <p class="text-gray-700 mt-2 font-serif">Try searching for "University", "College", or "Umuahia".</p>
+        <button onclick="resetFilters()"
+          class="mt-4 px-4 py-2 bg-secondary text-white rounded-lg hover:bg-black transition font-sans text-sm">Clear
+          Search</button>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // 1. DATA SOURCE (EXPANDED TO ~24 ENTRIES)
+    const educationData = [
+      // UNIVERSITIES & TERTIARY
+      {
+        id: 1,
+        name: "Michael Okpara University (MOUAU)",
+        type: "Federal University",
+        lga: "Ikwuano",
+        address: "Umudike, Ikwuano",
+        focus: "Agriculture & Technology",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800"
+      },
+      {
+        id: 2,
+        name: "Abia State University (ABSU)",
+        type: "State University",
+        lga: "Uturu",
+        address: "Uturu, Isuikwuato",
+        focus: "Arts, Science & Law",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800"
+      },
+      {
+        id: 3,
+        name: "Abia State Polytechnic",
+        type: "Polytechnic",
+        lga: "Aba North",
+        address: "Aba-Owerri Road, Aba",
+        focus: "Technology & Business",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800"
+      },
+      {
+        id: 4,
+        name: "Gregory University",
+        type: "Private University",
+        lga: "Uturu",
+        address: "Uturu",
+        focus: "Entrepreneurship",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800"
+      },
+      {
+        id: 5,
+        name: "Rhema University",
+        type: "Private University",
+        lga: "Aba South",
+        address: "Aba-Owerri Road",
+        focus: "Christian Excellence",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=800"
+      },
+      {
+        id: 6,
+        name: "Clifford University",
+        type: "Private University",
+        lga: "Isiala Ngwa South",
+        address: "Owerrinta",
+        focus: "Adventist Education",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=800"
+      },
+      {
+        id: 7,
+        name: "Abia State College of Health",
+        type: "College",
+        lga: "Aba South",
+        address: "Aba",
+        focus: "Health Sciences",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=800"
+      },
+      {
+        id: 8,
+        name: "Abia State College of Education",
+        type: "College",
+        lga: "Arochukwu",
+        address: "Arochukwu Technical",
+        focus: "Teacher Training",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800"
+      },
+
+      // SECONDARY SCHOOLS (TOP TIER & HISTORIC)
+      {
+        id: 9,
+        name: "Government College Umuahia",
+        type: "Secondary School",
+        lga: "Umuahia North",
+        address: "Ikot Ekpene Road",
+        focus: "Boys Boarding School",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800"
+      },
+      {
+        id: 10,
+        name: "Dority International School",
+        type: "Private School",
+        lga: "Aba South",
+        address: "Umungasi, Aba",
+        focus: "Early Childhood & High School",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800"
+      },
+      {
+        id: 11,
+        name: "Federal Government College Ohafia",
+        type: "Federal College",
+        lga: "Ohafia",
+        address: "Ohafia Town",
+        focus: "Unity School",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800"
+      },
+      {
+        id: 12,
+        name: "Living Word Academy",
+        type: "Private School",
+        lga: "Aba North",
+        address: "Abayi, Aba",
+        focus: "Holistic Education",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1522661067900-ab829854a57f?q=80&w=800"
+      },
+      {
+        id: 13,
+        name: "Ibeku High School",
+        type: "Secondary School",
+        lga: "Umuahia North",
+        address: "Umuahia",
+        focus: "Secondary Education",
+        verified: false,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800"
+      },
+      {
+        id: 14,
+        name: "Holy Rosary Secondary School",
+        type: "Secondary School",
+        lga: "Umuahia North",
+        address: "Umuahia",
+        focus: "Girls Boarding",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1610484826967-09c5720778c7?q=80&w=800"
+      },
+      {
+        id: 15,
+        name: "Wilcox Memorial Comprehensive",
+        type: "Secondary School",
+        lga: "Aba North",
+        address: "Ogbor Hill, Aba",
+        focus: "Comprehensive Education",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=800"
+      },
+      {
+        id: 16,
+        name: "MOUAU International Secondary",
+        type: "Private School",
+        lga: "Ikwuano",
+        address: "Umudike Campus",
+        focus: "University Prep",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800"
+      },
+      {
+        id: 17,
+        name: "Britarch Schools",
+        type: "Private School",
+        lga: "Umuahia North",
+        address: "Umuahia",
+        focus: "British Curriculum",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800"
+      },
+      {
+        id: 18,
+        name: "Word of Faith Schools",
+        type: "Private School",
+        lga: "Aba South",
+        address: "Aba",
+        focus: "Christian Education",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800"
+      },
+      {
+        id: 19,
+        name: "Ngwa High School",
+        type: "Secondary School",
+        lga: "Aba North",
+        address: "Abayi",
+        focus: "Historic Institution",
+        verified: false,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800"
+      },
+      {
+        id: 20,
+        name: "Ovim Girls Secondary School",
+        type: "Secondary School",
+        lga: "Isuikwuato",
+        address: "Ovim",
+        focus: "Girls Education",
+        verified: false,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800"
+      },
+
+      // RESEARCH & LIBRARIES
+      {
+        id: 21,
+        name: "National Root Crops Research",
+        type: "Research Institute",
+        lga: "Ikwuano",
+        address: "Umudike",
+        focus: "Agricultural Innovation",
+        verified: true,
+        category: "research",
+        image: "https://images.unsplash.com/photo-1600336153113-d66c79de3e91?q=80&w=800"
+      },
+      {
+        id: 22,
+        name: "Abia State Library Board",
+        type: "Public Library",
+        lga: "Umuahia North",
+        address: "Umuahia Central",
+        focus: "Public Access & Reading",
+        verified: true,
+        category: "library",
+        image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800"
+      },
+      {
+        id: 23,
+        name: "School of Nursing Umuahia",
+        type: "Nursing School",
+        lga: "Umuahia North",
+        address: "FMC Umuahia",
+        focus: "Medical Training",
+        verified: true,
+        category: "tertiary",
+        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?q=80&w=800"
+      },
+      {
+        id: 24,
+        name: "Command Secondary School",
+        type: "Military School",
+        lga: "Ohafia",
+        address: "Goodluck Ebele Jonathan Barracks",
+        focus: "Discipline & Academics",
+        verified: true,
+        category: "secondary",
+        image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=800"
+      }
+    ];
+
+    // 2. DOM ELEMENTS
+    const gridContainer = document.getElementById('educationGrid');
+    const searchInput = document.getElementById('searchInput');
+    const lgaFilter = document.getElementById('lgaFilter');
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // 3. INITIALIZATION
+    document.addEventListener('DOMContentLoaded', () => {
+      populateLGAOptions();
+      renderEducation(educationData);
+    });
+
+    // 4. POPULATE DROPDOWN
+    function populateLGAOptions() {
+      const lgas = [...new Set(educationData.map(f => f.lga))].sort();
+      lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga;
+        option.textContent = lga;
+        lgaFilter.appendChild(option);
+      });
+    }
+
+    // 5. RENDER FUNCTION
+    function renderEducation(data) {
+      gridContainer.innerHTML = '';
+
+      if (data.length === 0) {
+        gridContainer.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        resultCount.textContent = 'No schools found';
+        return;
+      }
+
+      gridContainer.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      resultCount.textContent = `Showing ${data.length} institution${data.length === 1 ? '' : 's'}`;
+
+      // Default Images (Academic Theme)
+      const tertiaryImages = ['https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800', 'https://images.unsplash.com/photo-1504817343863-5092a323804e?q=80&w=800'];
+      const secondaryImages = ['https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800', 'https://images.unsplash.com/photo-1577896337318-2838d1b16e5e?q=80&w=800'];
+      const libraryImages = ['https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800', 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800'];
+
+      data.forEach((place, index) => {
+        let badgeColor = 'bg-gray-100 text-gray-800';
+        let cardImage = place.image || tertiaryImages[index % tertiaryImages.length];
+
+        switch (place.category) {
+          case 'tertiary':
+            badgeColor = 'bg-blue-100 text-blue-800';
+            if (!place.image) cardImage = tertiaryImages[index % tertiaryImages.length];
+            break;
+          case 'secondary':
+            badgeColor = 'bg-green-100 text-green-800';
+            if (!place.image) cardImage = secondaryImages[index % secondaryImages.length];
+            break;
+          case 'research':
+            badgeColor = 'bg-purple-100 text-purple-800';
+            if (!place.image) cardImage = tertiaryImages[index % tertiaryImages.length];
+            break;
+          case 'library':
+            badgeColor = 'bg-yellow-100 text-yellow-800';
+            if (!place.image) cardImage = libraryImages[index % libraryImages.length];
+            break;
+        }
+
+        const card = document.createElement('div');
+        // Identical Structure to Restaurant/Tourism
+        card.className = `bg-white border border-gray-200 p-0 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300 flex flex-col justify-between card-animate overflow-hidden rounded-md`;
+        card.style.animationDelay = `${index * 50}ms`;
+
+        card.innerHTML = `
+          <div>
+            
+            <div class="h-48 w-full overflow-hidden bg-gray-100 relative group">
+               <img src="${cardImage}" alt="${place.name}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+               <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-500"></div>
+            </div>
+
+            
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-5">
+                 <span class="${badgeColor} text-lg font-bold px-3 py-1 rounded uppercase tracking-wide font-serif">${place.type}</span>
+                 ${place.verified ? '<div class="bg-gray-50 p-1.5 rounded-full"><i class="bi bi-patch-check-fill text-accent text-lg" title="Accredited/Verified"></i></div>' : ''}
+              </div>
+              
+              
+              <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-accent transition-colors cursor-pointer hover:underline decoration-accent underline-offset-4">
+                ${place.name}
+              </h3>
+              
+              
+              <p class="text-lg font-medium text-accent font-serif mb-4 flex items-center gap-2">
+                  <i class="bi bi-mortarboard-fill"></i> ${place.focus}
+              </p>
+
+              
+              <div class="space-y-2 text-lg text-gray-700 font-serif mt-4">
+                <p class="flex items-start gap-2">
+                  <i class="bi bi-geo-alt mt-0.5 text-gray-500"></i>
+                  <span>${place.address}, <strong>${place.lga}</strong></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="px-6 pb-6 pt-2 flex gap-4 font-serif border-t border-transparent">
+            <button class="flex-1 bg-secondary text-white py-2 rounded-md text-lg font-bold hover:bg-black transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-black">
+              View Details
+            </button>
+            <button class="px-3 py-2 border border-gray-500 rounded-full text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors" title="Locate on Map">
+              <i class="bi bi-map-fill"></i>
+            </button>
+          </div>
+        `;
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // 6. FILTER LOGIC
+    function handleFilters() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedLga = lgaFilter.value;
+
+      const filtered = educationData.filter(place => {
+        const matchesSearch =
+          place.name.toLowerCase().includes(searchTerm) ||
+          place.type.toLowerCase().includes(searchTerm) ||
+          place.focus.toLowerCase().includes(searchTerm) ||
+          place.address.toLowerCase().includes(searchTerm);
+        const matchesLga = selectedLga === "" || place.lga === selectedLga;
+        return matchesSearch && matchesLga;
+      });
+
+      renderEducation(filtered);
+
+      if (searchTerm || selectedLga) resetBtn.classList.remove('hidden');
+      else resetBtn.classList.add('hidden');
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      lgaFilter.value = '';
+      handleFilters();
+    }
+
+    searchInput.addEventListener('input', handleFilters);
+    lgaFilter.addEventListener('change', handleFilters);
+
+
+  </script>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

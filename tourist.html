@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism & Attractions in Abia State | My Abia</title>
+  <meta name="description"
+    content="Discover the beauty of Abia. From the Azumini Blue River to the National War Museum.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#059669', // Emerald 600
+            secondary: '#262626', // Neutral 800
+            accent: '#0891b2', // Cyan 600
+          },
+          fontFamily: {
+            // Enforcing Times New Roman as requested
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth rendering animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Modal Animation */
+    @keyframes modalPop {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-animate {
+      animation: modalPop 0.3s ease-out forwards;
+    }
+
+    /* Custom scrollbar */
+    select::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    select::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    select::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+
+
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search attractions, history, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourism.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <header style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2000');"
+    class="relative bg-gray-900 border-b border-gray-200 pt-32 pb-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+
+
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-5 text-white tracking-tight drop-shadow-md">
+        Tourism & Attractions in Abia
+      </h1>
+      <p class="text-xl text-white max-w-2xl mx-auto font-serif mb-8 drop-shadow-md opacity-90">
+        Explore the hidden gems of God's Own State. From the crystal clear Azumini River to the historic War Museum.
+      </p>
+    </div>
+  </header>
+
+
+  <section class="bg-white sticky top-20 p-3 z-40 border-b border-gray-200 shadow-sm" aria-label="Search and Filters">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="relative flex-grow group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-search text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <input type="text" id="searchInput" placeholder="Search for museums, caves, rivers, or location..."
+            class="block w-full pl-10 pr-3 py-3 border border-black rounded-md leading-5 bg-gray-50 placeholder-gray-600 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif transition-all shadow-sm">
+        </div>
+
+        <div class="relative md:w-1/3 group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-geo-alt text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <select id="lgaFilter"
+            class="block w-full pl-10 pr-10 py-3 border border-black rounded-md leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif appearance-none cursor-pointer transition-all shadow-sm">
+            <option value="">All Locations</option>
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            <i class="bi bi-chevron-down text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 flex justify-between items-center">
+        <p class="text-lg text-gray-900 font-serif" id="resultCount">Showing all attractions</p>
+        <button onclick="resetFilters()"
+          class="text-sm text-accent hover:text-cyan-700 hover:underline font-serif hidden" id="resetBtn">Reset
+          Filters</button>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="flex-grow w-full py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="tourismGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+
+      </div>
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
+          <i class="bi bi-compass text-2xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900">No attractions found</h3>
+        <p class="text-gray-700 mt-2 font-serif">Try searching for "Museum", "River", or "Arochukwu".</p>
+        <button onclick="resetFilters()"
+          class="mt-4 px-4 py-2 bg-secondary text-white rounded-lg hover:bg-black transition font-sans text-sm">Clear
+          Search</button>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <div id="modal-overlay"
+    class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex justify-center items-center p-4 backdrop-blur-sm"
+    onclick="closeModal(event)">
+    <div id="modal-content"
+      class="bg-white w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden relative modal-animate font-serif"
+      onclick="event.stopPropagation()">
+
+
+      <button onclick="closeModal()"
+        class="absolute top-4 right-4 bg-white/90 rounded-full p-2 shadow hover:bg-red-50 text-red-600 z-10 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+
+      <div class="h-64 overflow-hidden relative group">
+        <img id="m-image" src="" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <span id="m-category"
+          class="absolute bottom-4 left-4 bg-primary text-white text-xs px-3 py-1.5 rounded uppercase tracking-wider font-bold shadow-sm"></span>
+      </div>
+
+
+      <div class="p-6 md:p-8">
+        <h2 id="m-title" class="text-3xl font-bold text-gray-900 mb-2 leading-tight"></h2>
+        <p id="m-desc" class="text-gray-700 italic mb-6 border-l-4 border-accent pl-4 text-lg"></p>
+
+
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 shadow-inner">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-5 border-b border-gray-200 pb-2">
+            Visitor Intelligence</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8 text-lg">
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-geo-alt-fill mr-1"></i> Location
+              </p>
+              <p id="m-location" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-cash-stack mr-1"></i> Entry Fee
+              </p>
+              <p id="m-fee" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-clock-fill mr-1"></i> Best Time
+              </p>
+              <p id="m-time" class="font-medium text-gray-900"></p>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-bold uppercase mb-1"><i class="bi bi-universal-access mr-1"></i>
+                Accessibility</p>
+              <p id="m-access" class="font-medium text-gray-900"></p>
+            </div>
+          </div>
+
+
+          <div class="mt-6 bg-green-50 border border-green-100 rounded-lg p-4 flex items-start">
+            <span class="text-xl mr-3">ðŸ’¡</span>
+            <div>
+              <p class="text-xs font-bold text-green-800 uppercase mb-1">PRO TIP:</p>
+              <p id="m-tip" class="text-base text-green-900 leading-snug"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-end">
+          <button onclick="closeModal()"
+            class="px-6 py-2.5 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition font-bold text-lg">Close
+            Guide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // 1. DATA SOURCE (Enhanced with Images & Details)
+    const tourismData = [
+      {
+        id: 1,
+        name: "National War Museum",
+        type: "Historical Site",
+        lga: "Umuahia North",
+        address: "Ebonyi Road, Umuahia",
+        activity: "History, Military Artifacts",
+        verified: true,
+        category: "heritage",
+        desc: "A solemn reminder of the Nigerian Civil War. It houses the Ojukwu Bunker, armored tanks, and the famous 'Ogbunigwe' bomb fabrication.",
+        image: "https://images.unsplash.com/photo-1599596397087-0b1e3678385e?q=80&w=800&auto=format&fit=crop",
+        fee: "â‚¦500 (Students: â‚¦200)",
+        bestTime: "10:00 AM - 4:00 PM (Weekdays)",
+        access: "Partial wheelchair access",
+        tip: "Ask for a guided tour to understand the significance of the Radio Biafra transmitter."
+      },
+      {
+        id: 2,
+        name: "Azumini Blue River",
+        type: "Nature Reserve",
+        lga: "Ukwa East",
+        address: "Azumini Town",
+        activity: "Boating, Picnics, Sightseeing",
+        verified: true,
+        category: "nature",
+        desc: "Famous for its crystal-clear blue waters that sparkle in the sunlight. The river comes from the Sambreiro River and is surrounded by lush white sands.",
+        image: "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?q=80&w=800&auto=format&fit=crop",
+        fee: "Free (Boat rides: â‚¦1,000)",
+        bestTime: "Dry Season (Nov - Mar)",
+        access: "Rough terrain, not wheelchair friendly",
+        tip: "Bring your own food for a picnic, as there are few vendors nearby."
+      },
+      {
+        id: 3,
+        name: "Ojukwu Bunker",
+        type: "Historical Site",
+        lga: "Umuahia North",
+        address: "Okpara Avenue",
+        activity: "Civil War History",
+        verified: true,
+        category: "heritage",
+        desc: "The subterranean command post of the Biafran leader. It was camouflaged as a toilet in the garden but led to a sophisticated underground complex.",
+        image: "https://images.unsplash.com/photo-1628169213876-068305c48733?q=80&w=800&auto=format&fit=crop",
+        fee: "â‚¦500",
+        bestTime: "12:00 PM - 3:00 PM",
+        access: "Stairs only (Underground)",
+        tip: "It gets humid underground; dress lightly."
+      },
+      {
+        id: 4,
+        name: "Museum of Colonial History",
+        type: "Museum",
+        lga: "Aba South",
+        address: "Ikot Ekpene Road, Aba",
+        activity: "Colonial Artifacts",
+        verified: true,
+        category: "heritage",
+        desc: "Houses artifacts from the British colonial era, including trade agreements, old currency, and photographs of early Aba.",
+        image: "https://images.unsplash.com/photo-1565060169112-2580c0587212?q=80&w=800&auto=format&fit=crop",
+        fee: "â‚¦200",
+        bestTime: "Weekdays 9 AM - 5 PM",
+        access: "Accessible",
+        tip: "Great place for students researching the Aba Women's Riot of 1929."
+      },
+      {
+        id: 5,
+        name: "Amakama Wooden Cave",
+        type: "Nature Wonder",
+        lga: "Umuahia South",
+        address: "Amakama Community",
+        activity: "Cave Exploration, Nature Walk",
+        verified: false,
+        category: "nature",
+        desc: "A massive hollow tree that served as a safe haven during inter-tribal wars. It is large enough to contain over 20 people.",
+        image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop",
+        fee: "Donation to Community",
+        bestTime: "Early Morning",
+        access: "Hiking required",
+        tip: "You need a local guide from the village to locate the exact tree."
+      },
+      {
+        id: 6,
+        name: "Long Juju Slave Route",
+        type: "Historical Landmark",
+        lga: "Arochukwu",
+        address: "Arochukwu Kingdom",
+        activity: "Cultural History, Tours",
+        verified: true,
+        category: "heritage",
+        desc: "The site of the Ibini Ukpabi oracle. It was a major destination during the slave trade era. Includes the 'River of Blood'.",
+        image: "https://images.unsplash.com/photo-1599939571322-792a326991f2?q=80&w=800&auto=format&fit=crop",
+        fee: "Negotiable Tour Guide Fee",
+        bestTime: "Dry Season",
+        access: "Difficult terrain",
+        tip: "This is a sacred site. Respect local customs and ask permission before taking photos."
+      },
+      {
+        id: 7,
+        name: "Ohafia War Dance",
+        type: "Cultural Festival",
+        lga: "Ohafia",
+        address: "Ohafia Communities",
+        activity: "Cultural Performance, Dance",
+        verified: true,
+        category: "culture",
+        desc: "Known as 'Iri Agha', this vigorous dance celebrates the martial prowess of Ohafia warriors. Performed during festivals.",
+        image: "https://images.unsplash.com/photo-1551044438-e6d18398e945?q=80&w=800&auto=format&fit=crop",
+        fee: "Free (Public viewing)",
+        bestTime: "December / Festivals",
+        access: "Crowded",
+        tip: "Visit during the New Yam Festival for the best performances."
+      },
+      {
+        id: 8,
+        name: "Abia Tower",
+        type: "Historical Landmark",
+        lga: "Umuahia North",
+        address: "Enugu-Port Harcourt Expressway",
+        activity: "Photography, Sightseeing",
+        verified: true,
+        category: "heritage",
+        desc: "A symbolic monument greeting visitors to Umuahia. The tower represents the strength and unity of the state.",
+        image: "https://images.unsplash.com/photo-1597926227653-6ce8706d396a?q=80&w=800&auto=format&fit=crop",
+        fee: "Free",
+        bestTime: "Sunset for photos",
+        access: "Easy access",
+        tip: "Best viewed from the landscaped gardens surrounding the roundabout."
+      },
+      {
+        id: 9,
+        name: "Ngodo Cave",
+        type: "Nature Wonder",
+        lga: "Umunneochi",
+        address: "Ngodo Isuochi",
+        activity: "Spelunking, Hiking",
+        verified: false,
+        category: "nature",
+        desc: "An impressive natural limestone cave system with stalactites and stalagmites. A great spot for adventurous hikers.",
+        image: "https://images.unsplash.com/photo-1506422748879-887454f9cd95?q=80&w=800&auto=format&fit=crop",
+        fee: "Guide Fee Required",
+        bestTime: "Dry Season",
+        access: "Strenuous Hike",
+        tip: "Wear sturdy boots and bring a flashlight; the interior is dark and slippery."
+      },
+      {
+        id: 10,
+        name: "Akwete Weaving Center",
+        type: "Cultural Center",
+        lga: "Ukwa East",
+        address: "Akwete Town",
+        activity: "Shopping, Cultural Tour",
+        verified: true,
+        category: "culture",
+        desc: "Home of the famous Akwete cloth. Watch local women weave intricate geometric patterns using traditional vertical looms.",
+        image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde8b?q=80&w=800&auto=format&fit=crop",
+        fee: "Free to watch",
+        bestTime: "Daytime",
+        access: "Wheelchair accessible",
+        tip: "Buy authentic fabric directly from the weavers for the best price and quality."
+      },
+      {
+        id: 11,
+        name: "Uhuchukwu Cave",
+        type: "Nature Wonder",
+        lga: "Isuikwuato",
+        address: "Ahaba Imenyi",
+        activity: "Exploration, Nature Walk",
+        verified: false,
+        category: "nature",
+        desc: "A lesser-known but fascinating cave in the Isuikwuato hills. Known for its serene environment and unique rock formations.",
+        image: "https://images.unsplash.com/photo-1499244571938-d620a283995f?q=80&w=800&auto=format&fit=crop",
+        fee: "Community Donation",
+        bestTime: "Morning",
+        access: "Moderate Hike",
+        tip: "Local legends say the cave was a dwelling for ancient deities."
+      },
+      {
+        id: 12,
+        name: "Ekpe Festival",
+        type: "Cultural Festival",
+        lga: "Umuahia / Ohafia",
+        address: "Various Communities",
+        activity: "Masquerade, Dance",
+        verified: true,
+        category: "culture",
+        desc: "A colourful masquerade festival celebrated to mark the end of the year and usher in the new one. Features the fearsome Ekpe masquerade.",
+        image: "https://images.unsplash.com/photo-1621682372775-533449e5502d?q=80&w=800&auto=format&fit=crop",
+        fee: "Free",
+        bestTime: "January / December",
+        access: "Public Event",
+        tip: "The festival involves loud drumming and crowds; be prepared for a vibrant atmosphere."
+      }
+    ];
+
+    // 2. DOM ELEMENTS
+    const gridContainer = document.getElementById('tourismGrid');
+    const searchInput = document.getElementById('searchInput');
+    const lgaFilter = document.getElementById('lgaFilter');
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Modal Elements
+    const modalOverlay = document.getElementById('modal-overlay');
+
+    // 3. INITIALIZATION
+    document.addEventListener('DOMContentLoaded', () => {
+      populateLGAOptions();
+      renderTourism(tourismData);
+    });
+
+    // 4. MODAL LOGIC (New Additions)
+    function openModal(id) {
+      const place = tourismData.find(p => p.id === id);
+      if (!place) return;
+
+      // Populate Modal Fields
+      document.getElementById('m-image').src = place.image;
+      document.getElementById('m-category').textContent = place.type;
+      document.getElementById('m-title').textContent = place.name;
+      document.getElementById('m-desc').textContent = place.desc || "No description available for this location.";
+      document.getElementById('m-location').textContent = place.address + ', ' + place.lga;
+      document.getElementById('m-fee').textContent = place.fee || "Free entry";
+      document.getElementById('m-time').textContent = place.bestTime || "9:00 AM - 5:00 PM";
+      document.getElementById('m-access').textContent = place.access || "Standard access";
+      document.getElementById('m-tip').textContent = place.tip || "Wear comfortable shoes and carry water.";
+
+      // Show Modal
+      modalOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal(event) {
+      // If event exists, check if clicked outside content
+      if (event && !event.target.id.includes('modal-overlay') && !event.target.closest('button')) {
+        return;
+      }
+      modalOverlay.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // 5. RENDER FUNCTION
+    function populateLGAOptions() {
+      const lgas = [...new Set(tourismData.map(f => f.lga))].sort();
+      lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga;
+        option.textContent = lga;
+        lgaFilter.appendChild(option);
+      });
+    }
+
+    function renderTourism(data) {
+      gridContainer.innerHTML = '';
+
+      if (data.length === 0) {
+        gridContainer.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        resultCount.textContent = 'No attractions found';
+        return;
+      }
+
+      gridContainer.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      resultCount.textContent = `Showing ${data.length} location${data.length === 1 ? '' : 's'}`;
+
+      data.forEach((place, index) => {
+        let badgeColor = 'bg-gray-100 text-gray-800';
+        let iconClass = 'bi-geo-alt';
+
+        switch (place.category) {
+          case 'heritage': badgeColor = 'bg-yellow-100 text-yellow-800'; iconClass = 'bi-bank'; break;
+          case 'nature': badgeColor = 'bg-green-100 text-green-800'; iconClass = 'bi-tree-fill'; break;
+          case 'leisure': badgeColor = 'bg-blue-100 text-blue-800'; iconClass = 'bi-emoji-smile'; break;
+          case 'culture': badgeColor = 'bg-red-100 text-red-800'; iconClass = 'bi-people-fill'; break;
+        }
+
+        const card = document.createElement('div');
+        card.className = `bg-white border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300 flex flex-col justify-between card-animate`;
+        card.style.animationDelay = `${index * 50}ms`;
+
+        // Updated button to call openModal()
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-5">
+              <span class="${badgeColor} text-lg font-bold px-3 py-1 rounded uppercase tracking-wide font-serif">${place.type}</span>
+              ${place.verified ? '<div class="bg-gray-50 p-1.5 rounded-full"><i class="bi bi-star-fill text-accent text-lg" title="Top Rated"></i></div>' : ''}
+            </div>
+            
+            <h3 onclick="openModal(${place.id})" class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-accent transition-colors cursor-pointer hover:underline decoration-accent underline-offset-4">
+              ${place.name}
+            </h3>
+            
+            <p class="text-lg font-medium text-accent font-serif mb-4 flex items-center gap-2">
+                <i class="bi bi-camera-fill"></i> ${place.activity}
+            </p>
+
+            <div class="space-y-2 text-lg text-gray-700 font-serif mt-4">
+              <p class="flex items-start gap-2">
+                <i class="bi bi-geo-alt mt-0.5 text-gray-500"></i>
+                <span>${place.address}, <strong>${place.lga}</strong></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-7 pt-4 border-t border-gray-200 flex gap-4 font-serif">
+            <button onclick="openModal(${place.id})" class="flex-1 bg-secondary text-white py-2 rounded-md text-lg font-bold hover:bg-black transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-black">
+              Visitor Guide
+            </button>
+            <button onclick="openModal(${place.id})" class="px-3 py-2 border border-gray-500 rounded-full text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors" title="Get Directions">
+              <i class="bi bi-info-circle-fill"></i>
+            </button>
+          </div>
+        `;
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // 6. FILTER LOGIC
+    function handleFilters() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedLga = lgaFilter.value;
+      const filtered = tourismData.filter(place => {
+        const matchesSearch =
+          place.name.toLowerCase().includes(searchTerm) ||
+          place.type.toLowerCase().includes(searchTerm) ||
+          place.activity.toLowerCase().includes(searchTerm) ||
+          place.address.toLowerCase().includes(searchTerm);
+        const matchesLga = selectedLga === "" || place.lga === selectedLga;
+        return matchesSearch && matchesLga;
+      });
+      renderTourism(filtered);
+      if (searchTerm || selectedLga) resetBtn.classList.remove('hidden');
+      else resetBtn.classList.add('hidden');
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      lgaFilter.value = '';
+      handleFilters();
+    }
+
+    searchInput.addEventListener('input', handleFilters);
+    lgaFilter.addEventListener('change', handleFilters);
+
+
+  </script>
+  <script src="js/animations.js"></script>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>

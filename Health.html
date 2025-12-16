@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Services - Abia State</title>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Setting "Times New Roman" as the default font family
+                        sans: ['"Times New Roman"', 'Times', 'serif'],
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Class used by JavaScript to hide elements during search */
+        .hidden-card {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased overflow-x-hidden">
+
+
+
+
+    <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+
+
+                <div class="flex-shrink-0 md:mr-3">
+                    <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+                        <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+                    </a>
+                </div>
+
+
+                <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+                    <div class="relative w-full">
+                        <input id="desktop-search-input" type="search"
+                            placeholder="Search attractions, history, or location..."
+                            class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        <i
+                            class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+                    </div>
+                </div>
+
+
+                <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+                    <a href="gov.html" class="hover:text-black">Government</a>
+                    <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+                    <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+                            aria-haspopup="true" aria-expanded="false">
+                            Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                transition-all duration-300 z-10">
+                            <a href="business-economy.html"
+                                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+                            <a href="Health.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                                Services</a>
+                            <a href="Education.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+                            <a href="Restaurant.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+                            <a href="Market.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+                            <a href="tourist.html"
+                                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+                        </div>
+                    </div>
+                    <a href="About page.html" class="hover:text-black">About</a>
+                    <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+                    <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+                        <button onclick="window.location.href='Login.html'"
+                            class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+                            Sign in
+                        </button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="bi bi-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+                <div class="px-4 py-4 space-y-3">
+                    <div class="mb-4 relative">
+                        <input id="mobile-search-input" type="search" placeholder="Search..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+                        <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+                    <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+                    <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+                    <a href="Government-announcement.html"
+                        class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+                    <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                        <button onclick="window.location.href='Login.html'"
+                            class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+                            in</button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <section style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2000');"
+        class="py-28 px-4 bg-cover bg-center bg-no-repeat bg-gray-800 bg-blend-overlay border-b border-gray-200 md:mt-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Health Services
+            </h1>
+            <marquee behavior="" direction="">
+                <p class="text-xl md:text-2xl font-medium text-green-300">
+                    Find trusted healthcare providers and medical facilities across Abia state
+                </p>
+            </marquee>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-10">
+            <button id="explore-btn"
+                class="px-6 py-3 bg-white text-black font-bold rounded-md shadow hover:bg-gray-200 transition text-lg">Browse
+                Providers</button>
+            <a href="#"
+                class="px-6 py-3 border border-white font-bold rounded-md text-white hover:bg-white hover:text-black text-lg transition">Contact
+                us</a>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="py-24 mt-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+            <div class="text-center mb-16">
+                <span class="text-lg font-bold text-gray-700">Browse</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Healthcare providers in Abia</h2>
+                <p class="text-xl text-gray-600">Select a provider to view full details and contact information</p>
+            </div>
+
+
+            <div id="providers-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+                    <div class="provider-card border border-gray-300 p-8 rounded-sm hover:shadow-lg transition cursor-pointer bg-white flex flex-col justify-between h-full group"
+                        onclick="document.querySelector('Ab')">
+                        <div>
+                            <div
+                                class="w-10 h-10 border-2 border-gray-300 rounded flex items-center justify-center text-gray-300 mb-6 group-hover:bg-black group-hover:text-white transition">
+                                <i class="bi bi-plus-lg text-xl"></i>
+                            </div>
+                            <h3 class="card-title text-2xl font-bold text-gray-900 mb-2">
+                                Abia State University Teaching Hospital </h3>
+                            <p class="card-location text-lg text-gray-600">34 MCC Rd, Abayi, Aba 45311</p>
+                        </div>
+                        <button class="mt-8 flex items-center text-lg font-bold text-gray-900" onclick="goToPage3()">
+                            View <i
+                                class="bi bi-chevron-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+
+
+                    <div class="provider-card border border-gray-300 p-8 rounded-sm hover:shadow-lg transition cursor-pointer bg-white flex flex-col justify-between h-full group"
+                        onclick="viewDetails('St. Lukes Medical Center')">
+                        <div>
+                            <div
+                                class="w-10 h-10 border-2 border-black rounded flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition">
+                                <i class="bi bi-plus-lg text-xl"></i>
+                            </div>
+                            <h3 class="card-title text-2xl font-bold text-gray-900 mb-2">St. Luke's Medical Center</h3>
+                            <p class="card-location text-lg text-gray-600">Aba, Abia state</p>
+                        </div>
+                        <div class="mt-8 flex items-center text-lg font-bold text-gray-900">
+                            View <i
+                                class="bi bi-chevron-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="provider-card border border-gray-300 p-8 rounded-sm hover:shadow-lg transition cursor-pointer bg-white flex flex-col justify-between h-full group"
+                        onclick="viewDetails('Mercy Clinic and Pharmacy')">
+                        <div>
+                            <div
+                                class="w-10 h-10  flex items-center justify-center mb-6 border-2 border-black rounded ">
+                                <i class="bi bi-hospital text-lg text-green-400"></i></i>
+                            </div>
+                            <h3 class="card-title text-2xl font-bold text-gray-900 mb-2">Mercy Clinic and Pharmacy</h3>
+                            <p class="card-location text-lg text-gray-600">Ohafia, Abia state</p>
+                        </div>
+                        <div class="mt-8 flex items-center text-lg font-bold text-gray-900">
+                            View <i
+                                class="bi bi-chevron-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="provider-card border border-gray-300 p-8 rounded-sm hover:shadow-lg transition cursor-pointer bg-white-opacity-0.1 flex flex-col justify-between h-full group"
+                        onclick="viewDetails('Arochukwu Health Center')">
+                        <div>
+                            <div
+                                class="w-10 h-10 border-2 border-black rounded flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition">
+                                <i class="bi bi-plus-lg text-xl"></i>
+                            </div>
+                            <h3 class="card-title text-2xl font-bold text-gray-900 mb-2">Arochukwu Health Center</h3>
+                            <p class="card-location text-lg text-gray-600">Arochukwu, Abia state</p>
+                        </div>
+                        <div class="mt-8 flex items-center text-lg font-bold text-gray-900">
+                            View <i
+                                class="bi bi-chevron-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="provider-card lg:col-span-1 border border-gray-200 shadow-sm rounded-sm flex flex-col h-full group">
+                    <div class="bg-gray-200 h-64 w-full flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop"
+                            alt="Victory Dental Practice"
+                            class="group-hover:scale-110 transition duration-500 w-full h-full object-cover">
+                    </div>
+
+                    <div class="p-8 flex flex-col flex-grow">
+                        <span class="text-lg font-bold text-green-600 mb-2 block">Active</span>
+                        <h3 class="card-title text-3xl font-bold text-gray-900 mb-4 leading-tight">Victory Dental
+                            Practice</h3>
+                        <p class="card-location text-xl text-gray-600 mb-8">Umuahia, Abia state. Specialized dental care
+                            and orthodontics</p>
+
+                        <div class="mt-auto flex items-center gap-6">
+                            <button onclick="goToPage2()"
+                                class="px-6 py-3 border border-gray-900 text-gray-900 text-lg font-medium hover:bg-gray-900 hover:text-white transition">
+                                More
+                            </button>
+                            <a href="#" onclick="viewDetails('Victory Dental Practice')"
+                                class="flex items-center text-lg font-bold text-gray-900 hover:underline">
+                                View <i class="bi bi-chevron-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="no-results" class="hidden text-center mt-10">
+                <i class="bi bi-search text-4xl text-gray-300"></i>
+                <p class="text-xl text-gray-500 mt-2">No providers found matching your search.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                                class="bi bi-leaf-fill"></i></span> My Abia</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+                    <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+                </div>
+                <div class="flex gap-4 text-gray-900 text-xl">
+                    <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="border-gray-200 mb-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+                <p>© 2025 My Abia. All rights reserved.</p>
+                <div class="flex gap-6 underline decoration-1 underline-offset-4">
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    /**
+    * SECTION 2: SEARCH FUNCTIONALITY
+    */
+    const desktopSearch = document.getElementById('desktop-search-input');
+    const mobileSearch = document.getElementById('mobile-search-input');
+    const providerCards = document.querySelectorAll('.provider-card');
+    const noResultsMsg = document.getElementById('no-results');
+
+    function filterCards(e) {
+    const searchText = e.target.value.toLowerCase();
+    let hasVisibleCards = false;
+
+    providerCards.forEach(card => {
+    const title = card.querySelector('.card-title').textContent.toLowerCase();
+    const location = card.querySelector('.card-location').textContent.toLowerCase();
+
+    if (title.includes(searchText) || location.includes(searchText)) {
+    card.classList.remove('hidden-card');
+    hasVisibleCards = true;
+    } else {
+    card.classList.add('hidden-card');
+    }
+    });
+
+    if (hasVisibleCards) {
+    noResultsMsg.classList.add('hidden');
+    } else {
+    noResultsMsg.classList.remove('hidden');
+    }
+    }
+
+    desktopSearch.addEventListener('input', filterCards);
+    mobileSearch.addEventListener('input', filterCards);
+
+
+
+    /**
+    * SECTION 3: BUTTON HANDLERS
+    */
+    function viewDetails(providerName) {
+    console.log(`User clicked on: ${providerName}`);
+    alert(`Opening details for: ${providerName}`);
+    }
+
+    function goToPage2() {
+    window.location.href = "3.html";
+    };
+
+    function goToPage3() {
+    window.location.href = "2.html";
+    };
+    </script>
+    <script src="js/animations.js"></script>
+    <script src="js/global-search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1030 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Abia - Tailwind Design</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="src/output.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#e0f2fe', // Specific light blue
+                        'brand-green': '#10b981', // Specific green
+                        'brand-green-hover': '#059669',
+                    },
+                    fontFamily: {
+                        // Setting "Times New Roman" as the default font family
+                        sans: ['"Times New Roman"', 'Times', 'serif'],
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Entrance animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 600ms ease-out both;
+        }
+
+        .team-card:nth-child(1) {
+            animation-delay: 0ms;
+        }
+
+        .team-card:nth-child(2) {
+            animation-delay: 80ms;
+        }
+
+        .team-card:nth-child(3) {
+            animation-delay: 160ms;
+        }
+
+        .team-card:nth-child(4) {
+            animation-delay: 240ms;
+        }
+
+        .team-card:nth-child(5) {
+            animation-delay: 320ms;
+        }
+
+        .team-card:nth-child(6) {
+            animation-delay: 400ms;
+        }
+
+        /* Team section responsive helpers */
+        /* Mobile carousel: horizontal scroll with snap */
+        @media (max-width: 639px) {
+            .team-grid {
+                display: flex;
+                gap: 1rem;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                padding-bottom: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                align-items: center;
+            }
+
+            .team-grid::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .team-grid::-webkit-scrollbar-track {
+                background: #f1f5f9;
+                border-radius: 3px;
+            }
+
+            .team-grid::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 3px;
+            }
+
+            .team-grid::-webkit-scrollbar-thumb:hover {
+                background: #94a3b8;
+            }
+
+            .team-card {
+                flex: 0 0 75vw;
+                scroll-snap-align: center;
+                scroll-snap-stop: always;
+                min-width: 200px;
+            }
+        }
+
+        /* Tablet and up: grid layout */
+        @media (min-width: 640px) {
+            .team-grid {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .team-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            padding: 1rem 0.75rem;
+            animation: fadeUp 600ms ease-out both;
+            border-radius: 0.5rem;
+        }
+
+        /* Ensure inner pieces stay centered regardless of markup variations and have consistent spacing */
+        .team-card .team-avatar,
+        .team-card .team-name,
+        .team-card .team-role,
+        .team-card .team-social,
+        .team-card>div {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: block;
+        }
+
+        .team-card .team-avatar {
+            margin-bottom: 0.6rem;
+        }
+
+        .team-card .team-name {
+            margin-top: 0.4rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-card .team-role {
+            margin-bottom: 0.6rem;
+        }
+
+        .team-card .team-social {
+            margin-top: 0.25rem;
+        }
+
+        /* Performance hints to reduce repaint/shift during scroll */
+        .team-card,
+        .team-avatar img {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        /* Mobile carousel card sizing */
+        @media (max-width: 639px) {
+            .team-card {
+                min-width: 200px;
+                max-width: 300px;
+                padding: 1rem;
+            }
+
+            .team-avatar {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        .team-avatar {
+            width: clamp(96px, 18vw, 200px);
+            height: clamp(96px, 18vw, 200px);
+            border-radius: 9999px;
+            overflow: hidden;
+            background: #f3f4f6;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease, filter .4s ease;
+            filter: grayscale(100%);
+        }
+
+        .team-card:hover .team-avatar img,
+        .team-card:focus-within .team-avatar img {
+            filter: grayscale(0);
+            transform: scale(1.04);
+        }
+
+        .team-name {
+            font-weight: 700;
+            font-size: clamp(1rem, 2.7vw, 1.05rem);
+            margin-top: .25rem;
+        }
+
+        .team-role {
+            color: #10b981;
+            font-weight: 600;
+            font-size: clamp(.9rem, 2.2vw, 1rem);
+        }
+
+        /* Carousel dot indicators */
+        .carousel-dots {
+            display: none;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 0;
+        }
+
+        @media (max-width: 639px) {
+            .carousel-dots {
+                display: flex;
+            }
+
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #d1d5db;
+                cursor: pointer;
+                transition: background-color .25s ease, transform .2s ease;
+                border: none;
+                padding: 0;
+            }
+
+            .carousel-dot.active {
+                background-color: #10b981;
+                transform: scale(1.2);
+            }
+
+            .carousel-dot:hover {
+                background-color: #9ca3af;
+            }
+        }
+
+        /* Carousel arrow buttons */
+        .carousel-controls {
+            display: none;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 639px) {
+            .carousel-controls {
+                display: flex;
+                padding: 0 1rem;
+            }
+
+            .carousel-btn {
+                width: 44px;
+                height: 44px;
+                border: 2px solid #10b981;
+                background-color: #fff;
+                color: #10b981;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 1.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color .2s ease, color .2s ease, transform .15s ease;
+                flex-shrink: 0;
+            }
+
+            .carousel-btn:hover {
+                background-color: #10b981;
+                color: #fff;
+                transform: scale(1.1);
+            }
+
+            .carousel-btn:active {
+                transform: scale(0.95);
+            }
+
+            .carousel-spacer {
+                display: none;
+            }
+        }
+
+        /* Social icons: bigger touch targets on mobile */
+        .team-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border-radius: 6px;
+            transition: background .15s, color .15s;
+        }
+
+        .team-social a:active,
+        .team-social a:focus {
+            outline: 2px solid rgba(16, 185, 129, .18);
+            outline-offset: 2px;
+        }
+
+        /* Fine-tune for very small screens */
+        @media (max-width:420px) {
+            .team-grid {
+                gap: 1rem;
+            }
+
+            .team-card {
+                padding: 0.75rem;
+            }
+
+            .team-avatar {
+                width: 140px;
+                height: 140px;
+            }
+
+            .team-name {
+                font-size: 1.05rem;
+            }
+
+            .team-role {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased overflow-x-hidden">
+
+    <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+
+
+                <div class="flex-shrink-0 md:mr-3">
+                    <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+                        <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+                    </a>
+                </div>
+
+
+                <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+                    <div class="relative w-full">
+                        <input id="desktop-search-input" type="search"
+                            placeholder="Search attractions, history, or location..."
+                            class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        <i
+                            class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+                    </div>
+                </div>
+
+
+                <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+                    <a href="gov.html" class="hover:text-black">Government</a>
+                    <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+                    <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+                            aria-haspopup="true" aria-expanded="false">
+                            Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                transition-all duration-300 z-10">
+                            <a href="business-economy.html"
+                                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+                            <a href="Health.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                                Services</a>
+                            <a href="Education.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+                            <a href="Restaurant.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+                            <a href="Market.html"
+                                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+                            <a href="tourist.html"
+                                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+                        </div>
+                    </div>
+                    <a href="About page.html" class="hover:text-black">About</a>
+                    <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+                    <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+                        <button onclick="window.location.href='Login.html'"
+                            class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+                            Sign in
+                        </button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="bi bi-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+                <div class="px-4 py-4 space-y-3">
+                    <div class="mb-4 relative">
+                        <input id="mobile-search-input" type="search" placeholder="Search..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md" />
+                        <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <a href="gov.html" class="block text-lg text-gray-700 hover:text-black">Government</a>
+                    <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+                    <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+                    <a href="Emergency page.html" class="block text-lg text-gray-700 hover:text-black">Emergency</a>
+                    <a href="Government-announcement.html"
+                        class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+                    <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                        <button onclick="window.location.href='Login.html'"
+                            class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+                            in</button>
+                        <button onclick="window.location.href='Business-sector.html'"
+                            class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="container mx-auto px-6 pt-24 pb-16 text-center max-w-4xl md:mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 md:mt-10">About My Abia</h1>
+        <p class="text-2xl text-gray-900 max-w-2xl mx-auto">Connecting Abia State through a simple, honest directory
+            of local businesses and essential services.</p>
+    </section>
+
+
+    <section class="text-4xl md:text-5xl font-bold mb-6 md:mt-10">
+        <span class="text-4xl font-bold text-black mb-4 block text-center">Foundation</span>
+        <p class="text-2xl text-gray-900 text-center font-light mb-10 max-w-2xl mx-auto">
+            My Abia exists to map the heartbeat of our state. We built this directory so that finding a business or help
+            becomes as natural as asking a neighbor.
+        </p>
+        <div class="flex justify-center gap-5 items-center">
+            <button
+                class="px-6 py-2 border border-gray-700 rounded hover:border-gray-900 hover:bg-black hover:text-white transition text-lg font-bold">Explore</button>
+            <a href="#"
+                class="text-lg font-bold flex items-center gap-2 hover:border px-6 py-2 hover:border-gray-700 hover:rounded">Learn
+                <i class="fa-solid fa-chevron-right text-xs"></i></a>
+        </div>
+    </section>
+
+
+    <section class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <span class="text-lg font-bold text-gray-700 mb-2 block">Purpose</span>
+            <h2 class="text-4xl font-bold mb-2">Why we built this</h2>
+            <p class="text-gray-900 text-xl mt-3">Abia needed a place where businesses and people could find each other.
+            </p>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+            <div
+                class="border border-gray-200 p-8 hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white flex flex-col justify-between min-h-[300px]">
+                <div>
+                    <i class="fa-solid fa-store text-3xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3">Local Business</h3>
+                    <p class="text-gray-700 text-lg">Small shops gain the visibility they deserve in their own state.</p>
+                </div>
+                <a href="#" class="text-lg font-bold flex items-center gap-1 mt-6">Explore <i
+                        class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+        
+            
+            <div
+                class="border border-gray-200 p-8 hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white flex flex-col justify-between min-h-[300px]">
+                <div>
+                    <i class="fa-solid fa-wheelchair text-3xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3">Accessible</h3>
+                    <p class="text-gray-700 text-lg">No more searching blindly for what you need in Abia.</p>
+                </div>
+                <a href="#" class="text-lg font-bold flex items-center gap-1 mt-6">Explore <i
+                        class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+        
+        
+            <div
+                class="border border-gray-200 p-8 hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white flex flex-col justify-between min-h-[300px]">
+                <div>
+                    <i class="fa-solid fa-bullhorn text-3xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3">Government</h3>
+                    <p class="text-gray-700 text-lg">We connect citizens to official announcements and resources.</p>
+                </div>
+                <a href="#" class="text-lg font-bold flex items-center gap-1 mt-6">Explore <i
+                        class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+        
+        
+            <div
+                class="border border-gray-200 p-8 hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white flex flex-col justify-between min-h-[300px]">
+                <div>
+                    <i class="fa-solid fa-shield-halved text-3xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3">Community Trust</h3>
+                    <p class="text-gray-700 text-lg">Every listing is verified so you know who you're dealing with.</p>
+                </div>
+                <a href="#" class="text-lg font-bold flex items-center gap-1 mt-6">Explore <i
+                        class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+        </div>
+        </section>
+
+    </section>
+
+
+    <section class="w-full py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-20 animate-fade-up">
+                <span class="text-lg font-bold text-gray-700 mb-3 block">People</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Our team</h2>
+                <p class="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto">Built by people who know Abia and believe
+                    in its potential.</p>
+            </div>
+
+            <div class="team-grid mx-auto max-w-7xl" id="team-carousel">
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/kelbie2.jpg"
+                            alt="Solomon Nwabam">
+                    </div>
+                    <div>
+                        <h3 class="team-name">Nwabam Solomon</h3>
+                        <p class="team-role mb-2">Founder and Developer</p>
+                        <div class="flex justify-center gap-3 text-gray-700 mb-3">
+                            <a aria-label="linkedin" href="#" class="hover:text-black"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a aria-label="twitter" href="#" class="hover:text-black"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                            <a aria-label="github" href="#" class="hover:text-black"><i
+                                    class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
+                            alt="Laughter">
+                    </div>
+                    <h3 class="team-name">Irolewe Laughter</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700 mb-3">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/Gabriel herald.jpg"
+                            alt="Gabriel Herald">
+                    </div>
+                    <h3 class="team-name">Gabriel Herald</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700 mb-3">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/shedrrack everest.jpg"
+                            alt="Shedrack Everest">
+                    </div>
+                    <h3 class="team-name">Shedrack Everest</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700 mb-3">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/Gabriel destiny.jpg"
+                            alt="Gabriel Destiny">
+                    </div>
+                    <h3 class="team-name">Gabriel Destiny</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/Emma fx.jpg"
+                            alt="Emmanuel Chidiebube">
+                    </div>
+                    <h3 class="team-name">Emmanuel Chidiebube</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400&q=80" 
+                        alt="James Ochiabuto">
+                    </div>
+                    <h3 class="team-name">James Ochiabuto</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400&q=80" 
+                        alt="Chigozie David">
+                    </div>
+                    <h3 class="team-name">Chigozie David</h3>
+                    <p class="team-role mb-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-3 text-gray-700">
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-black"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-controls" id="carousel-controls">
+                <button class="carousel-btn" id="carousel-prev" aria-label="Previous team member"><i
+                        class="bi bi-chevron-left"></i></button>
+                <div class="carousel-spacer"></div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+                <div class="carousel-spacer"></div>
+                <button class="carousel-btn" id="carousel-next" aria-label="Next team member"><i
+                        class="bi bi-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="text-center mt-20">
+            <h3 class="font-bold text-xl mb-4">We're hiring</h3>
+            <button
+                class="px-6 py-2 border border-gray-900 rounded hover:bg-gray-50 transition text-lg font-medium">Open
+                positions</button>
+        </div>
+    </section>
+
+
+    <section class="container mx-auto max-w-7xl px-6 py-20 border-t border-gray-100">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+
+            <div>
+                <span class="text-lg font-bold text-gray-700 mb-2 block">Reach</span>
+                <h2 class="text-4xl font-bold mb-4">Get in touch</h2>
+                <p class="text-gray-900 mb-10">We're here to listen and help you connect with Abia.</p>
+
+                <div class="space-y-8">
+                    <div>
+                        <i class="fa-regular fa-envelope text-xl mb-2 block"></i>
+                        <h4 class="font-bold">Email</h4>
+                        <p class="text-gray-500 text-lg">Send us a message anytime</p>
+                        <a href="mailto:hello@myabia.ng" class="text-lg underline">hello@myabia.ng</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone text-xl mb-2 block"></i>
+                        <h4 class="font-bold">Phone</h4>
+                        <p class="text-gray-500 text-lg">Call during business hours</p>
+                        <a href="tel:+2348034567890" class="text-lg underline">+234 (803) 456-7890</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot text-xl mb-2 block"></i>
+                        <h4 class="font-bold">Office</h4>
+                        <p class="text-gray-500 text-lg mb-1">123 Commerce Avenue, Umuahia Abia State Nigeria</p>
+                        <a href="#" class="text-lg font-bold flex items-center gap-1">View on map <i
+                                class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-gray-100 rounded-lg overflow-hidden h-96 md:h-auto shadow-inner">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63558.18824838645!2d7.454296766467268!3d5.526938995345759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042c48b04975551%3A0xc391e4f4838dc86!2sUmuahia%2C%20Abia!5e0!3m2!1sen!2sng!4v1716300000000!5m2!1sen!2sng"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container mx-auto max-w-7xl px-6 py-20 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+
+            <div>
+                <span class="text-lg font-bold text-gray-500 mb-2 block">Connect</span>
+                <h2 class="text-4xl font-bold mb-4">Send us a message</h2>
+                <p class="text-gray-500 mb-8">Tell us what's on your mind or how we can help.</p>
+
+                <div class="space-y-4 text-lg font-medium">
+                    <div class="flex items-center gap-3"><i class="fa-regular fa-envelope w-5"></i> hello@myabia.ng
+                    </div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-phone w-5"></i> +234 (803) 456-7890</div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-location-dot w-5"></i> 123 Commerce
+                        Avenue</div>
+                </div>
+            </div>
+
+
+            <div>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-lg font-bold mb-2">First name</label>
+                            <input type="text"
+                                class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-bold mb-2">Last name</label>
+                            <input type="text"
+                                class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-lg font-bold mb-2">Email</label>
+                            <input type="email"
+                                class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-bold mb-2">Phone number</label>
+                            <input type="tel"
+                                class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-lg font-bold mb-2">What can we help with?</label>
+                        <select
+                            class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition bg-white">
+                            <option>Select a topic</option>
+                            <option>Registration</option>
+                            <option>Support</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-lg font-bold mb-2">Message</label>
+                        <textarea rows="5"
+                            class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-black transition"
+                            placeholder="Tell us more"></textarea>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="terms" class="w-4 h-4">
+                        <label for="terms" class="text-sm">I agree to the terms of service</label>
+                    </div>
+
+                    <button type="button"
+                        class="bg-black text-white px-8 py-3 rounded font-bold hover:bg-gray-800 transition">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                                class="bi bi-leaf-fill"></i></span> My Abia</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+                    <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+                    <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+                </div>
+                <div class="flex gap-4 text-gray-900 text-xl">
+                    <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="border-gray-200 mb-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+                <p>© 2025 My Abia. All rights reserved.</p>
+                <div class="flex gap-6 underline decoration-1 underline-offset-4">
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+                    <div class="w-px bg-gray-300 h-10"></div>
+                    <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth horizontal scroll for team carousel on mobile
+        const teamGrid = document.querySelector('.team-grid');
+        if (teamGrid && window.innerWidth < 640) {
+            let isDown = false, startX, scrollLeft;
+
+            teamGrid.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - teamGrid.offsetLeft;
+                scrollLeft = teamGrid.scrollLeft;
+            });
+
+            teamGrid.addEventListener('mouseleave', () => isDown = false);
+            teamGrid.addEventListener('mouseup', () => isDown = false);
+
+            teamGrid.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - teamGrid.offsetLeft;
+                const walk = (x - startX) * 1;
+                teamGrid.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // Auto-scroll carousel and dot indicator tracking
+        const carousel = document.getElementById('team-carousel');
+        const dotsContainer = document.getElementById('carousel-dots');
+        const teamCards = document.querySelectorAll('.team-card');
+        let autoScrollInterval;
+        let isMobile = window.innerWidth < 640;
+
+        // Create dot indicators
+        function initDots() {
+            dotsContainer.innerHTML = '';
+            teamCards.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Go to team member ${index + 1}`);
+                dot.addEventListener('click', () => scrollToCard(index));
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // Scroll to specific card by index (use card.offsetLeft relative to the scroll container)
+        function scrollToCard(index, skipAutoRestart) {
+            if (!carousel) return;
+            const sanitizedIndex = Math.max(0, Math.min(index, teamCards.length - 1));
+            const card = teamCards[sanitizedIndex];
+            // Center the card in the carousel viewport to avoid left-edge shifting
+            const containerWidth = carousel.clientWidth;
+            const cardWidth = card.getBoundingClientRect().width;
+            const leftRaw = card.offsetLeft - (containerWidth - cardWidth) / 2;
+            // Clamp left between 0 and maxScroll to avoid overscroll
+            const maxScroll = Math.max(0, carousel.scrollWidth - containerWidth);
+            const left = Math.max(0, Math.min(leftRaw, maxScroll));
+            carousel.scrollTo({ left, behavior: 'smooth' });
+            updateActiveDot(sanitizedIndex);
+            if (!skipAutoRestart) resetAutoScroll();
+        }
+
+        // Update active dot based on scroll position (find the card whose center is closest to container center)
+        function updateActiveDot(forcedIndex) {
+            if (!carousel || !isMobile) return;
+            let currentIndex = 0;
+            if (typeof forcedIndex === 'number') {
+                currentIndex = forcedIndex;
+            } else {
+                const containerCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+                let closestDiff = Infinity;
+                teamCards.forEach((card, idx) => {
+                    const cardCenter = card.offsetLeft + card.getBoundingClientRect().width / 2;
+                    const diff = Math.abs(cardCenter - containerCenter);
+                    if (diff < closestDiff) {
+                        closestDiff = diff;
+                        currentIndex = idx;
+                    }
+                });
+            }
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentIndex));
+            return currentIndex;
+        }
+
+        // Auto-scroll timer â€” advance by index to avoid fractional shifts and loop back to start
+        function startAutoScroll() {
+            if (!isMobile || !carousel) return;
+            autoScrollInterval = setInterval(() => {
+                const current = updateActiveDot();
+                const next = (current + 1) % teamCards.length;
+                scrollToCard(next);
+            }, 2000); // Auto-scroll every 2 seconds
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        // Listen for manual scroll
+        if (carousel) {
+            // Debounce scroll end to finalize centering and eliminate fractional offsets
+            let scrollEndTimeout;
+            const SCROLL_END_DEBOUNCE = 60; // ms â€” tighter snap
+
+            carousel.addEventListener('scroll', () => {
+                updateActiveDot();
+                clearTimeout(scrollEndTimeout);
+                scrollEndTimeout = setTimeout(() => {
+                    const current = updateActiveDot();
+                    // Temporarily disable smooth scroll for instant snap, then re-enable
+                    const originalBehavior = carousel.style.scrollBehavior;
+                    carousel.style.scrollBehavior = 'auto';
+                    scrollToCard(current, true); // skip auto-restart to avoid double-reset
+                    carousel.style.scrollBehavior = originalBehavior || '';
+                }, SCROLL_END_DEBOUNCE);
+            }, { passive: true });
+
+            carousel.addEventListener('touchstart', resetAutoScroll, { passive: true });
+            carousel.addEventListener('mousedown', resetAutoScroll);
+            carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+            carousel.addEventListener('mouseleave', startAutoScroll);
+        }
+
+        // Arrow button handlers
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                const current = updateActiveDot();
+                const prev = (current - 1 + teamCards.length) % teamCards.length;
+                scrollToCard(prev);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const current = updateActiveDot();
+                const next = (current + 1) % teamCards.length;
+                scrollToCard(next);
+            });
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            isMobile = window.innerWidth < 640;
+            if (isMobile) {
+                initDots();
+                startAutoScroll();
+            }
+        });
+
+        // Reinit on resize
+        window.addEventListener('resize', () => {
+            const wasMobile = isMobile;
+            isMobile = window.innerWidth < 640;
+            if (isMobile && !wasMobile) {
+                initDots();
+                startAutoScroll();
+            } else if (!isMobile && wasMobile) {
+                clearInterval(autoScrollInterval);
+                dotsContainer.innerHTML = '';
+            }
+        });
+    </script>
+
+
+    <script src="js/animations.js"></script>
+    <script src="js/global-search.js"></script>
+</body>
+
+</html>

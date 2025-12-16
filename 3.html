@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Facilities in Abia State | My Abia</title>
+  <meta name="description" content="Find hospitals, clinics, and health centers in Abia State.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#059669', // Emerald 600
+            secondary: '#262626', // Neutral 800
+            accent: '#0891b2', // Cyan 600
+          },
+          fontFamily: {
+            sans: ['"Times New Roman"', 'Times', 'serif'],
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth rendering animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Custom scrollbar */
+    select::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    select::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    select::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-serif antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+
+
+
+  <nav class="border-b border-gray-200 sticky top-0 bg-white z-50 shadow-lg">
+    <div class="w-full px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 gap-4">
+
+
+        <div class="flex-shrink-0 md:mr-3">
+          <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
+            <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          </a>
+        </div>
+
+
+        <div class="hidden lg:flex items-center flex-1 justify-center max-w-lg mx-auto ">
+          <div class="relative w-full">
+            <input id="desktop-search-input" type="search" placeholder="Search hospitals, clinics, or location..."
+              class="w-full lg:w-56 xl:w-96 pl-10 pr-4 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+            <i
+              class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-black"></i>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:flex space-x-6 items-center text-lg text-gray-700 font-bold whitespace-nowrap">
+          <a href="gov.html" class="hover:text-black">Government</a>
+          <a href="Government-announcement.html" class="hover:text-black">Announcements</a>
+          <a href="Emergency page.html" class="hover:text-black">Emergency</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-black text-lg transition-colors duration-300"
+              aria-haspopup="true" aria-expanded="false">
+              Categories <i class="bi bi-chevron-down text-sm text-black"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-3 w-56 bg-white text-gray-700 rounded-lg shadow-xl opacity-0 invisible 
+                                                  group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 
+                                                  transition-all duration-300 z-10">
+              <a href="business-economy.html"
+                class="block px-6 py-3 hover:bg-blue-50 first:rounded-t-lg text-lg font-bold transition-colors duration-300 hover:text-black">Business</a>
+              <a href="Health.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Health
+                Services</a>
+              <a href="Education.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Education</a>
+              <a href="Restaurant.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Restaurants</a>
+              <a href="Market.html"
+                class="block px-6 py-3 hover:bg-blue-50 text-lg font-bold transition-colors duration-300 hover:text-black">Markets</a>
+              <a href="tourism.html"
+                class="block px-6 py-3 hover:bg-blue-50 last:rounded-b-lg text-lg font-bold transition-colors duration-300 hover:text-black">Tourism</a>
+            </div>
+          </div>
+          <a href="About page.html" class="hover:text-black">About</a>
+          <a href="Admin page.html" class="hover:text-black">Admin</a>
+
+
+          <div class="hidden lg:flex md:ml-3 items-center space-x-4 flex-shrink-0">
+            <button onclick="window.location.href='Login.html'"
+              class="text-lg border border-gray-300 px-5 py-2 rounded hover:bg-green-600 hover:text-white transition whitespace-nowrap">
+              Sign in
+            </button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="text-lg bg-black text-white px-5 py-2 rounded hover:bg-gray-800 transition whitespace-nowrap">
+              Add
+            </button>
+          </div>
+        </div>
+
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-300 ml-5 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <div class="mb-4 relative">
+            <input id="mobile-search-input" type="search" placeholder="Search..."
+              class="w-full px-4 py-2 border border-gray-200 rounded-md" />
+            <i class="bi bi-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <a href="About page.html" class="block text-lg text-gray-700 hover:text-black">About</a>
+          <a href="Category.html" class="block text-lg text-gray-700 hover:text-black">Categories</a>
+          <a href="Emergency page.html" class="block text-lg text-gray-700 hover:text-black">Emergency</a>
+          <a href="Government-announcement.html" class="block text-lg text-gray-700 hover:text-black">Announcements</a>
+          <a href="Admin page.html" class="block text-lg text-gray-700 hover:text-black">Admin</a>
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button onclick="window.location.href='Login.html'"
+              class="block text-center text-lg border border-gray-300 px-4 py-2 rounded w-full hover:bg-gray-50">Sign
+              in</button>
+            <button onclick="window.location.href='Business-sector.html'"
+              class="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <header
+    style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop');"
+    class="relative bg-gray-900 border-b border-gray-200 pt-32 pb-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+
+
+    <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-5 text-white tracking-tight drop-shadow-md">
+        Health Facilities in Abia
+      </h1>
+      <p class="text-xl text-white max-w-2xl mx-auto font-serif mb-8 drop-shadow-md opacity-90">
+        A comprehensive directory of hospitals, clinics, and primary health centers across all Local Government Areas.
+      </p>
+    </div>
+  </header>
+
+
+  <section class="bg-white sticky top-20 z-40 p-3 border-b border-gray-200 shadow-sm" aria-label="Search and Filters">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4">
+
+
+        <div class="relative flex-grow group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-search text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <input type="text" id="searchInput" placeholder="Search hospital name, address, or type..."
+            class="block w-full pl-10 pr-3 py-3 border border-black rounded-md leading-5 bg-gray-50 placeholder-gray-600 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif transition-all shadow-sm"
+            aria-label="Search hospitals">
+        </div>
+
+
+        <div class="relative md:w-1/3 group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i class="bi bi-geo-alt text-gray-500 group-focus-within:text-accent transition-colors"></i>
+          </div>
+          <select id="lgaFilter"
+            class="block w-full pl-10 pr-10 py-3 border border-black rounded-md leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent sm:text-lg font-serif appearance-none cursor-pointer transition-all shadow-sm"
+            aria-label="Filter by Local Government Area">
+            <option value="">All Locations</option>
+
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            <i class="bi bi-chevron-down text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="mt-3 flex justify-between items-center">
+        <p class="text-lg text-gray-900 font-serif" id="resultCount">Showing all facilities</p>
+        <button onclick="resetFilters()"
+          class="text-sm text-accent hover:text-cyan-700 hover:underline font-serif hidden" id="resetBtn">Reset
+          Filters</button>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="flex-grow w-full py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+      <div id="facilityGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+
+      </div>
+
+
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
+          <i class="bi bi-hospital text-2xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900">No facilities found</h3>
+        <p class="text-gray-700 mt-2 font-serif">Try adjusting your search or filter criteria.</p>
+        <button onclick="resetFilters()"
+          class="mt-4 px-4 py-2 bg-secondary text-white rounded-lg hover:bg-black transition font-sans text-sm">Clear
+          Search</button>
+      </div>
+
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="bg-white pt-20 pb-8 border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-leaf-fill"></i></span> My Abia</a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
+          <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Find services</a>
+          <a href="#" class="hover:text-gray-600 nav-link">View announcements</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Emergency contacts</a>
+          <a href="#" class="hover:text-gray-600 nav-link">Add your business</a>
+        </div>
+        <div class="flex gap-4 text-gray-900 text-xl">
+          <a href="#" class="hover:text-blue-600 transition text-blue-500"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-pink-600 transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-gray-600 transition text-black"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="hover:text-blue-500 transition text-blue-400"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-red-500 transition text-red-400"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <hr class="border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-lg text-gray-900">
+        <p>© 2025 My Abia. All rights reserved.</p>
+        <div class="flex gap-6 underline decoration-1 underline-offset-4">
+          <a href="#" class="hover:text-gray-600" onclick="select()">Privacy policy</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Terms of service</a>
+          <div class="w-px bg-gray-300 h-10"></div>
+          <a href="#" class="hover:text-gray-600" onclick="select()">Cookie settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // 1. EXPANDED DATA SOURCE (40 Entries)
+    // 1. EXPANDED DATA SOURCE (40 Entries) WITH UNIQUE IMAGES
+    const healthFacilities = [
+      // UMUAHIA NORTH
+      { id: 1, name: "Federal Medical Centre (FMC)", type: "Federal Hospital", lga: "Umuahia North", address: "Aba Road, Umuahia", phone: "0803-123-4567", verified: true, image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?q=80&w=800" },
+      { id: 2, name: "Madonna Hospital", type: "Private Hospital", lga: "Umuahia North", address: "No. 22 School Road", phone: "0802-555-0199", verified: false, image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" },
+      { id: 3, name: "Police Clinic", type: "Clinic", lga: "Umuahia North", address: "Bende Road, Umuahia", phone: "112", verified: true, image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800" },
+      { id: 4, name: "Hossana Specialist Hospital", type: "Specialist Clinic", lga: "Umuahia North", address: "Umuwaya Road", phone: "0803-555-1212", verified: false, image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800" },
+      { id: 5, name: "Golden Cross Infirmary", type: "Private Hospital", lga: "Umuahia North", address: "Azikiwe Road", phone: "0703-999-8888", verified: false, image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800" },
+
+      // UMUAHIA SOUTH
+      { id: 6, name: "Abia State Specialist Hospital", type: "State Hospital", lga: "Umuahia South", address: "Amachara, Umuahia", phone: "0805-999-8877", verified: true, image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800" },
+      { id: 7, name: "Ubuntu Medical Center", type: "Private Clinic", lga: "Umuahia South", address: "Old Umuahia Road", phone: "0700-UBUNTU", verified: false, image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=800" },
+      { id: 8, name: "PHC Ubakala", type: "Primary Health Centre", lga: "Umuahia South", address: "Ubakala Town Hall", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800" },
+      { id: 9, name: "Ezeleke Health Center", type: "Primary Health Centre", lga: "Umuahia South", address: "Ezeleke Community", phone: "N/A", verified: false, image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800" },
+
+      // ABA NORTH
+      { id: 10, name: "Abia State University Teaching Hospital", type: "Teaching Hospital", lga: "Aba North", address: "Aba-Owerri Road", phone: "0803-000-1111", verified: true, image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" },
+      { id: 11, name: "7th Day Adventist Hospital", type: "Mission Hospital", lga: "Aba North", address: "Old Ogbor Hill", phone: "0806-777-1234", verified: true, image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800" },
+      { id: 12, name: "St. Anthony's Hospital", type: "Private Hospital", lga: "Aba North", address: "Okigwe Road, Aba", phone: "0812-345-6789", verified: false, image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800" },
+      { id: 13, name: "Aba North Health Authority", type: "Govt Health Center", lga: "Aba North", address: "Eziukwu Road", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800" },
+
+      // ABA SOUTH
+      { id: 14, name: "New Era Specialist Hospital", type: "Specialist Clinic", lga: "Aba South", address: "Ezikiwe Road, Aba", phone: "0809-111-2222", verified: false, image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800" },
+      { id: 15, name: "General Hospital Aba", type: "General Hospital", lga: "Aba South", address: "Hospital Road, Aba", phone: "0803-GEN-HOSP", verified: true, image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" },
+      { id: 16, name: "Living Word Hospital", type: "Private Hospital", lga: "Aba South", address: "Ikot Ekpene Road", phone: "0805-444-5555", verified: true, image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800" },
+      { id: 17, name: "St. Joseph's Catholic Hospital", type: "Mission Hospital", lga: "Aba South", address: "Faulks Road", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800" },
+
+      // OHAFIA
+      { id: 18, name: "General Hospital Ohafia", type: "General Hospital", lga: "Ohafia", address: "Amaekpu, Ohafia", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800" },
+      { id: 19, name: "Mben Welness Clinic", type: "Private Clinic", lga: "Ohafia", address: "Elu Ohafia", phone: "0810-999-0000", verified: false, image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?q=80&w=800" },
+      { id: 20, name: "PHC Abiriba", type: "Primary Health Centre", lga: "Ohafia", address: "Amogudu, Abiriba", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800" },
+      { id: 21, name: "Ohafia Cottage Hospital", type: "Cottage Hospital", lga: "Ohafia", address: "Ebem Ohafia", phone: "N/A", verified: false, image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800" },
+
+      // BENDE
+      { id: 22, name: "General Hospital Bende", type: "General Hospital", lga: "Bende", address: "Bende Town", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" },
+      { id: 23, name: "Nneato Health Centre", type: "Primary Health Centre", lga: "Bende", address: "Nneato Community", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800" },
+      { id: 24, name: "Methodist Hospital Uzuakoli", type: "Mission Hospital", lga: "Bende", address: "Uzuakoli", phone: "0803-METHODIST", verified: true, image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800" },
+      { id: 25, name: "Item Health Center", type: "Primary Health Centre", lga: "Bende", address: "Item Okpi", phone: "N/A", verified: false, image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800" },
+
+      // ISIALA NGWA NORTH
+      { id: 26, name: "General Hospital Okpuala", type: "General Hospital", lga: "Isiala Ngwa North", address: "Okpuala Ngwa", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800" },
+      { id: 27, name: "St. Mary's Clinic", type: "Private Clinic", lga: "Isiala Ngwa North", address: "Nbawsi", phone: "N/A", verified: false, image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?q=80&w=800" },
+
+      // ISIALA NGWA SOUTH
+      { id: 28, name: "General Hospital Omoba", type: "General Hospital", lga: "Isiala Ngwa South", address: "Omoba", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?q=80&w=800" },
+      { id: 29, name: "PHC Ovungwu", type: "Primary Health Centre", lga: "Isiala Ngwa South", address: "Ovungwu", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800" },
+
+      // UKWA EAST & WEST
+      { id: 30, name: "General Hospital Azumini", type: "General Hospital", lga: "Ukwa East", address: "Azumini Ndoki", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" },
+      { id: 31, name: "PHC Akwete", type: "Primary Health Centre", lga: "Ukwa East", address: "Akwete", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800" },
+      { id: 32, name: "General Hospital Okeikpe", type: "General Hospital", lga: "Ukwa West", address: "Okeikpe", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800" },
+      { id: 33, name: "Total Health Clinic", type: "Private Clinic", lga: "Ukwa West", address: "Obehie Junction", phone: "0802-OIL-CITY", verified: false, image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=800" },
+
+      // IKWUANO
+      { id: 34, name: "Michael Okpara Uni. Health Services", type: "University Clinic", lga: "Ikwuano", address: "MOUAU Campus, Umudike", phone: "0803-UNI-CARE", verified: true, image: "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=800" },
+      { id: 35, name: "PHC Ibere", type: "Primary Health Centre", lga: "Ikwuano", address: "Ibere Community", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800" },
+
+      // AROCHUKWU
+      { id: 36, name: "General Hospital Arochukwu", type: "General Hospital", lga: "Arochukwu", address: "Arochukwu Town", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1596541223130-5d31a73fb6c6?q=80&w=800" },
+      { id: 37, name: "PHC Ututu", type: "Primary Health Centre", lga: "Arochukwu", address: "Ututu", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=800" },
+
+      // OTHER
+      { id: 38, name: "PHC Ugwunagbo", type: "Primary Health Centre", lga: "Ugwunagbo", address: "LGA Secretariat", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800" },
+      { id: 39, name: "Geometric Power Clinic", type: "Industrial Clinic", lga: "Osisioma Ngwa", address: "Osisioma Industrial Layout", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800" },
+      { id: 40, name: "Christian Hospital Nlagu", type: "Mission Hospital", lga: "Obingwa", address: "Nlagu", phone: "N/A", verified: true, image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800" }
+    ];
+
+    // 2. DOM ELEMENTS
+    const gridContainer = document.getElementById('facilityGrid');
+    const searchInput = document.getElementById('searchInput');
+    const lgaFilter = document.getElementById('lgaFilter');
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // 3. INITIALIZATION
+    document.addEventListener('DOMContentLoaded', () => {
+      populateLGAOptions();
+      renderFacilities(healthFacilities);
+    });
+
+    // 4. POPULATE DROPDOWN
+    function populateLGAOptions() {
+      const lgas = [...new Set(healthFacilities.map(f => f.lga))].sort();
+      lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga;
+        option.textContent = lga;
+        lgaFilter.appendChild(option);
+      });
+    }
+
+    // 5. RENDER FUNCTION (UPDATED TO MATCH TOURISM STRUCTURE)
+    function renderFacilities(data) {
+      gridContainer.innerHTML = '';
+
+      if (data.length === 0) {
+        gridContainer.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        resultCount.textContent = 'No facilities found';
+        return;
+      }
+
+      gridContainer.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      resultCount.textContent = `Showing ${data.length} facilit${data.length === 1 ? 'y' : 'ies'}`;
+
+      // Image Pool
+      const federalImages = [
+        'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800',
+        'https://images.unsplash.com/photo-1587351021759-3e566b9af922?q=80&w=800'
+      ];
+      const privateImages = [
+        'https://images.unsplash.com/photo-1538108149393-fbbd8189718c?q=80&w=800',
+        'https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800'
+      ];
+      const generalImages = [
+        'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800',
+        'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800'
+      ];
+
+      data.forEach((facility, index) => {
+        let badgeColor = 'bg-gray-100 text-gray-800';
+        let iconClass = 'bi-hospital';
+        let cardImage = facility.image;
+
+        if (facility.type.includes('Federal') || facility.type.includes('Teaching')) {
+          badgeColor = 'bg-green-100 text-green-800';
+          if (!cardImage) cardImage = federalImages[index % federalImages.length];
+        } else if (facility.type.includes('Private') || facility.type.includes('Specialist')) {
+          badgeColor = 'bg-purple-100 text-purple-800';
+          iconClass = 'bi-capsule';
+          if (!cardImage) cardImage = privateImages[index % privateImages.length];
+        } else {
+          badgeColor = 'bg-blue-100 text-blue-800';
+          iconClass = 'bi-activity';
+          if (!cardImage) cardImage = generalImages[index % generalImages.length];
+        }
+
+        const card = document.createElement('div');
+        // Structure matches Tourism: bg-white, shadow-sm, hover effects, flex-col
+        card.className = `bg-white border border-gray-200 p-0 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300 flex flex-col justify-between card-animate rounded-none`;
+        card.style.animationDelay = `${index * 50}ms`;
+
+        card.innerHTML = `
+          <div>
+            
+            <div class="h-56 w-full overflow-hidden relative group">
+               <img src="${cardImage}" alt="${facility.name}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+               <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+            </div>
+
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                 <span class="${badgeColor} text-sm font-bold px-3 py-1 rounded uppercase tracking-wide font-serif shadow-sm">${facility.type}</span>
+                 ${facility.verified ? '<div class="bg-gray-50 p-1 rounded-full" title="Verified Facility"><i class="bi bi-patch-check-fill text-green-600 text-lg"></i></div>' : ''}
+              </div>
+              
+              
+              <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-accent transition-colors cursor-pointer hover:underline decoration-accent underline-offset-4 font-serif">
+                ${facility.name}
+              </h3>
+              
+              
+              <p class="text-lg font-medium text-accent font-serif mb-4 flex items-center gap-2">
+                  <i class="${iconClass}"></i> Available 24/7
+              </p>
+
+              
+              <div class="space-y-2 text-lg text-gray-700 font-serif mt-4">
+                <p class="flex items-start gap-2">
+                  <i class="bi bi-geo-alt mt-1 text-gray-500"></i>
+                  <span>${facility.address}, <strong>${facility.lga}</strong></span>
+                </p>
+                <p class="flex items-center gap-2">
+                  <i class="bi bi-telephone text-gray-500"></i>
+                  <span>${facility.phone}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="px-6 pb-6 pt-2 flex gap-4 font-serif mt-auto">
+            <button class="flex-1 bg-secondary text-white py-2 rounded-md text-lg font-bold hover:bg-black transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-black">
+              View Details
+            </button>
+            <button class="px-3 py-2 border border-gray-500 rounded-full text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors" title="Call Now">
+              <i class="bi bi-telephone-fill"></i>
+            </button>
+          </div>
+        `;
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // 6. FILTER LOGIC
+    function handleFilters() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedLga = lgaFilter.value;
+
+      const filtered = healthFacilities.filter(facility => {
+        const matchesSearch =
+          facility.name.toLowerCase().includes(searchTerm) ||
+          facility.type.toLowerCase().includes(searchTerm) ||
+          facility.address.toLowerCase().includes(searchTerm);
+        const matchesLga = selectedLga === "" || facility.lga === selectedLga;
+        return matchesSearch && matchesLga;
+      });
+
+      renderFacilities(filtered);
+      if (searchTerm || selectedLga) resetBtn.classList.remove('hidden');
+      else resetBtn.classList.add('hidden');
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      lgaFilter.value = '';
+      handleFilters();
+    }
+
+    searchInput.addEventListener('input', handleFilters);
+    lgaFilter.addEventListener('change', handleFilters);
+
+    // Mobile
+  </script>
+  <script src="js/global-search.js"></script>
+</body>
+
+</html>
+```
