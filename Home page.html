@@ -92,7 +92,7 @@
 
       <div class="flex-shrink-0 md:mr-3">
         <a href="Home page.html" class="text-3xl font-bold italic text-gray-900 flex items-center">
-          <span class="mr-2 text-green-600"><i class="bi bi-leaf-fill"></i></span>My Abia
+          <span class="mr-2 text-green-600"><i class="bi bi-ubuntu"></i></span>My Abia
         </a>
       </div>
 
@@ -196,14 +196,19 @@
           Connect with local enterprises and essential contacts in seconds.
         </p>
         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-          <button
-            class="bg-white text-gray-900 px-6 py-3 sm:px-5 sm:py-4 hover:bg-black hover:text-white text-base sm:text-lg rounded btn-transition">
-            Search
-          </button>
+          <a href="#search">
+            <button
+              class="bg-white text-gray-900 px-6 py-3 sm:px-5 sm:py-4 hover:bg-black hover:text-white text-base sm:text-lg rounded btn-transition">
+              Search
+            </button>
+          </a>
+
+         <a href="#browser">
           <button
             class="border border-white text-white hover:bg-black hover:text-white px-6 py-3 sm:px-5 sm:py-4 text-base sm:text-lg rounded btn-transition">
             Browse
           </button>
+         </a>
         </div>
       </div>
     </div>
@@ -213,7 +218,7 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 animate-fade-up">
         <p class="text-lg text-gray-900">Browse</p>
-        <h2 class="text-5xl font-bold mt-3">What you need in Abia</h2>
+        <h2 id="browser" class="text-5xl font-bold mt-3">What you need in Abia</h2>
         <p class="text-lg text-gray-700 mt-5">
           Find doctors, schools, markets, food, businesses, and government offices
         </p>
@@ -534,9 +539,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
         <div class="flex-shrink-0">
-          <a href="#" class="text-3xl font-bold italic text-gray-900 flex items-center">
-            <img src="images/my-abia-logo-nobg.png" alt="My Abia Logo" class="h-14 w-auto object-contain mr-2"> My Abia
-          </a>
+          <a href="#" class="text-3xl font-bold italic text-gray-900"> <span class="mr-2 text-green-600"><i
+                class="bi bi-ubuntu"></i></span> My Abia</a>
         </div>
         <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-lg text-black">
           <a href="#" class="hover:text-gray-600 nav-link">Browse businesses</a>
@@ -566,6 +570,7 @@
       </div>
     </div>
   </footer>
+  <script src="js/animations.js"></script>
   <script src="js/global-search.js"></script>
 </body>
 
