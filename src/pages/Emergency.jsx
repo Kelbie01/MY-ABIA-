@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 export default function Emergency() {
   const emergencyServices = [
     {
@@ -46,21 +44,12 @@ export default function Emergency() {
         style={{ backgroundImage: "url('https://i.pinimg.com/736x/75/72/b0/7572b0d0c4ac9b66f884b6b9cf024a32.jpg')" }}
       >
         <div className="max-w-5xl mx-auto text-center px-4 relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-5 text-white mt-10 drop-shadow-lg"
-          >
+          <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-5 text-white mt-10 drop-shadow-lg">
             Emergency Contacts Matter
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-2xl text-gray-200 drop-shadow-md"
-          >
+          </h1>
+          <p className="text-base sm:text-2xl text-gray-200 drop-shadow-md">
             Keep these numbers close when seconds count and help is needed now.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -69,12 +58,8 @@ export default function Emergency() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             {emergencyServices.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="shadow-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-gray-500 hover:shadow-2xl transition duration-300 rounded-lg flex flex-col"
               >
                 <div className={`border-t-4 ${service.borderColor}`}></div>
@@ -94,7 +79,7 @@ export default function Emergency() {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -111,12 +96,8 @@ export default function Emergency() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-6">
             {moreServices.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="rounded-lg shadow-md p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition duration-300 h-full border border-gray-100 dark:border-gray-700"
               >
                 <div className="mb-4">
@@ -127,7 +108,7 @@ export default function Emergency() {
                 <button className={`text-lg hover:opacity-80 transition flex items-center gap-2 font-bold bg-transparent border-none ${item.color.replace('500', '600')}`}>
                   Learn More <i className="bi bi-chevron-right text-sm"></i>
                 </button>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -135,7 +116,7 @@ export default function Emergency() {
 
       {/* CTA Section */}
       <section className="px-4 py-20 md:py-24 w-full bg-gradient-to-r from-green-700 to-green-900">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">Help us keep this current</h2>
           <p className="text-base sm:text-xl text-green-50 mb-8 md:mb-12 leading-relaxed max-w-2xl mx-auto">
             Found an outdated number or a contact missing? Let us know and we will update it immediately to help the community.
