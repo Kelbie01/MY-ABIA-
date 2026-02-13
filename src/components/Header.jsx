@@ -7,13 +7,18 @@ export default function Header() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsCategoriesOpen(false);
+  };
+
   return (
     <nav className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-900 z-50 shadow-lg transition-colors duration-200">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 gap-4">
 
           <div className="flex-shrink-0 md:mr-3">
-            <Link to="/" className="text-3xl font-bold italic text-gray-900 dark:text-white flex items-center">
+            <Link to="/" onClick={closeMenu} className="text-3xl font-bold italic text-gray-900 dark:text-white flex items-center">
               <span className="mr-2 text-green-600"><i className="bi bi-ubuntu"></i></span>My Abia
             </Link>
           </div>
@@ -96,8 +101,8 @@ export default function Header() {
               <i className="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
             </div>
 
-            <Link to="/government" className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Government</Link>
-            <Link to="/about" className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">About</Link>
+            <Link to="/government" onClick={closeMenu} className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Government</Link>
+            <Link to="/about" onClick={closeMenu} className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">About</Link>
 
             <div className="relative">
               <button
@@ -109,21 +114,21 @@ export default function Header() {
               </button>
 
               <div className={`${isCategoriesOpen ? 'block' : 'hidden'} pl-4 mt-2 space-y-2 border-l-2 border-gray-100 dark:border-gray-700`}>
-                <Link to="/business" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Business</Link>
-                <Link to="/health" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Health Services</Link>
-                <Link to="/education" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Education</Link>
-                <Link to="/restaurants" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Restaurants</Link>
-                <Link to="/markets" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Markets</Link>
-                <Link to="/tourism" className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Tourism</Link>
+                <Link to="/business" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Business</Link>
+                <Link to="/health" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Health Services</Link>
+                <Link to="/education" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Education</Link>
+                <Link to="/restaurants" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Restaurants</Link>
+                <Link to="/markets" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Markets</Link>
+                <Link to="/tourism" onClick={closeMenu} className="block text-base text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-1">Tourism</Link>
               </div>
             </div>
 
-            <Link to="/announcements" className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Announcements</Link>
-            <Link to="/admin" className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Admin</Link>
+            <Link to="/announcements" onClick={closeMenu} className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Announcements</Link>
+            <Link to="/admin" onClick={closeMenu} className="block text-lg text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">Admin</Link>
 
             <div className="pt-4 border-t border-gray-100 dark:border-gray-700 flex flex-col gap-3">
-              <Link to="/login" className="block text-center text-lg border border-gray-300 dark:border-gray-600 px-4 py-2 rounded w-full hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-white">Sign in</Link>
-              <Link to="/add-business" className="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800 dark:hover:bg-gray-700">Add</Link>
+              <Link to="/login" onClick={closeMenu} className="block text-center text-lg border border-gray-300 dark:border-gray-600 px-4 py-2 rounded w-full hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-white">Sign in</Link>
+              <Link to="/add-business" onClick={closeMenu} className="block text-center text-lg bg-black text-white px-4 py-2 rounded w-full hover:bg-gray-800 dark:hover:bg-gray-700">Add</Link>
             </div>
           </div>
         </div>
