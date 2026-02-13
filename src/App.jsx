@@ -12,6 +12,8 @@ import Education from './pages/Education';
 import Restaurants from './pages/Restaurants';
 import Markets from './pages/Markets';
 import Tourism from './pages/Tourism';
+import HospitalDetails from './pages/HospitalDetails';
+import HospitalList from './pages/HospitalList';
 import PlaceholderPage from './components/PlaceholderPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
@@ -35,6 +37,8 @@ function App() {
             {/* Categories */}
             <Route path="business" element={<Business />} />
             <Route path="health" element={<Health />} />
+            <Route path="health/absuth" element={<HospitalDetails />} />
+            <Route path="health/list" element={<HospitalList />} />
             <Route path="education" element={<Education />} />
             <Route path="restaurants" element={<Restaurants />} />
             <Route path="markets" element={<Markets />} />

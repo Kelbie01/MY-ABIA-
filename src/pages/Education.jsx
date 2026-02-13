@@ -26,6 +26,7 @@ export default function Education() {
       focus: "Arts, Science & Law",
       verified: true,
       category: "tertiary",
+      website: "https://absu.edu.ng",
       image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800"
     },
     {
@@ -294,10 +295,20 @@ export default function Education() {
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2 flex gap-4 font-serif border-t border-transparent">
+                <div className="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-4 font-serif border-t border-transparent">
                   <button className="flex-1 bg-black dark:bg-white text-white dark:text-black py-2 rounded-md text-lg font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
                     View Details
                   </button>
+                  {place.website && (
+                    <a
+                      href={place.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-green-600 text-white py-2 rounded-md text-lg font-bold hover:bg-green-700 transition-colors text-center"
+                    >
+                      Visit Website
+                    </a>
+                  )}
                   <button className="px-3 py-2 border border-gray-500 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-green-600 transition-colors" title="Locate on Map">
                     <i className="bi bi-map-fill"></i>
                   </button>

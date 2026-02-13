@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Health() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -95,8 +96,9 @@ export default function Health() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredProviders.filter(p => !p.featured).map((provider) => (
-                <div
+                <Link
                   key={provider.id}
+                  to={provider.name.includes('Abia State University') ? '/health/absuth' : '#'}
                   className="border border-gray-300 dark:border-gray-700 p-8 rounded-sm hover:shadow-lg transition cursor-pointer bg-white dark:bg-gray-800 flex flex-col justify-between h-full group animate-fade-up"
                 >
                   <div>
@@ -109,7 +111,7 @@ export default function Health() {
                   <button className="mt-8 flex items-center text-lg font-bold text-gray-900 dark:text-white">
                     View <i className="bi bi-chevron-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
                   </button>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -128,12 +130,12 @@ export default function Health() {
                   <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">{provider.name}</h3>
                   <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">{provider.location}</p>
                   <div className="mt-auto flex items-center gap-6">
-                    <button className="px-6 py-3 border border-gray-900 dark:border-white text-gray-900 dark:text-white text-lg font-medium hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition">
+                    <Link to="/health/list" className="px-6 py-3 border border-gray-900 dark:border-white text-gray-900 dark:text-white text-lg font-medium hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition text-center">
                       More
-                    </button>
-                    <button className="flex items-center text-lg font-bold text-gray-900 dark:text-white hover:underline">
+                    </Link>
+                    <Link to="/health/list" className="flex items-center text-lg font-bold text-gray-900 dark:text-white hover:underline">
                       View <i className="bi bi-chevron-right ml-2 text-sm"></i>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
