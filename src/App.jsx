@@ -13,12 +13,14 @@ import Restaurants from './pages/Restaurants';
 import Markets from './pages/Markets';
 import Tourism from './pages/Tourism';
 import PlaceholderPage from './components/PlaceholderPage';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
